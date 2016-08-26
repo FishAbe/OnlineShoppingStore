@@ -1,4 +1,4 @@
-package mum.edu.cs544.controllers;
+package mum.edu.cs544.OnlineShoppingStore;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,7 +1,7 @@
 package mum.edu.cs544.OnlineShoppingStore;
 
 import junit.framework.Assert;
-import mum.edu.cs544.controllers.HomeController;
+import mum.edu.cs544.OnlineShoppingStore.HomeController;
 
 import org.junit.Test;
 import org.springframework.ui.ExtendedModelMap;
