@@ -9,14 +9,7 @@ import org.hibernate.validator.constraints.Email;
 public class Admin extends Person {
 	
 	
-	private int id;
 	
-	@Email
-	private String email;
-	
-	public Admin(){
-		
-	}
 	
 
 }
