@@ -20,7 +20,7 @@ public abstract class Product {
     @Id @GeneratedValue
     private long id;
 
-    @NotEmpty(message = "Product name may not be empty")
+    @NotEmpty(message = "Product names may not be empty")
     private String name;
 
     @Lob @NotEmpty(message="Description may not be empty")
