@@ -10,7 +10,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.validation.constraints.Pattern;
 
-
 import org.hibernate.validator.constraints.NotBlank;
 
 /**
