@@ -1,18 +1,32 @@
 package mum.edu.cs544.models;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
+
+import org.hibernate.validator.constraints.Email;
+
+@Entity
 public class Person {
- 
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
+    @NotNull
 	private String firstName;
 	
+    @NotNull
 	private String lastName;
 	
+    @Email
 	private String email;
 	
+    @NotNull
 	private String userName;
 	
+    @Null
 	private String password;
+    
+    private Address address;
 	
 	public Person(){
 		
