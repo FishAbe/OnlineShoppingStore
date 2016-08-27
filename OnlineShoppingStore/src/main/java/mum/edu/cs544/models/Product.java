@@ -41,6 +41,13 @@ public abstract class Product {
     //@JsonIgnore
     private List<ProductCopy> productCopies = new ArrayList<ProductCopy>();
 
+    public Product(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+    public Product() {
+
+    }
 	public long getId() {
 		return id;
 	}
