@@ -31,10 +31,57 @@ public class Order {
     @JoinColumn(name = "order_id")
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderLine> orderLineItems = new ArrayList<OrderLine>(); // can be Final
- 
+    
+    @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
     
     public Order() {
 
     }
+
+	public Address getShippingAddress() {
+		return shippingAddress;
+	}
+
+	public void setShippingAddress(Address shippingAddress) {
+		this.shippingAddress = shippingAddress;
+	}
+
+	public Date getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
+	}
+
+	public Double getTotalOrderPrice() {
+		return totalOrderPrice;
+	}
+
+	public void setTotalOrderPrice(Double totalOrderPrice) {
+		this.totalOrderPrice = totalOrderPrice;
+	}
+
+	public List<OrderLine> getOrderLineItems() {
+		return orderLineItems;
+	}
+
+	public void setOrderLineItems(List<OrderLine> orderLineItems) {
+		this.orderLineItems = orderLineItems;
+	}
+
+	public OrderStatus getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+	public Long getId() {
+		return id;
+	}
+    
+    
 }
