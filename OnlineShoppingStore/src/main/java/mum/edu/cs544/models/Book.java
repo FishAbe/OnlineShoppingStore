@@ -10,7 +10,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.NotEmpty;;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import mum.edu.cs544.models.Enum.Genre;
 
 /**
  * @author Tarekegn
