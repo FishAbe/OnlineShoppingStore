@@ -9,7 +9,7 @@ import org.hibernate.validator.constraints.Email;
 @Entity
 public class Person {
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	private long id;
 	
     @NotNull
 	private String firstName;
@@ -32,7 +32,7 @@ public class Person {
 		
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 

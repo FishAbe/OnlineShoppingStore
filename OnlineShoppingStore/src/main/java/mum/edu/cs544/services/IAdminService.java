@@ -22,7 +22,7 @@ public interface IAdminService {
     
     Set<Admin> getAllAdmins();
     
-    void remove(Admin admin);
+    void remove(long id);
     
     Admin checkAdmin(String email, String password);
 }

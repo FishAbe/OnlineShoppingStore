@@ -3,6 +3,7 @@
  */
 package mum.edu.cs544.services.Imp;
 
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -13,35 +14,45 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import mum.edu.cs544.dao.AdminDAO;
+
+
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
+
+
+import mum.edu.cs544.dao.IAdminDAO;
+
 import mum.edu.cs544.models.Admin;
 import mum.edu.cs544.services.IAdminService;
 
 /**
+<<<<<<< HEAD
  * @author Tarekegn
  * @createdDate Aug 27, 2016
  */
 @Service
-@Transactional
+@Transactional(propagation = Propagation.REQUIRED)
+@Component
 public class AdminService implements IAdminService {
-
-    @Autowired
-    private AdminDAO adminDao;
-
-	/* (non-Javadoc)
-	 * @see mum.edu.cs544.services.IAdminService#addAdmin(mum.edu.cs544.models.Admin)
-	 */
-    @Override
-	public void addAdmin(Admin admin) {
-		adminDao.save(admin);
-       // return adminDao.findOne((long) admin.getId());
+    
+	private IAdminDAO _adminDao;
+	
+	@Autowired
+	public AdminService(IAdminDAO adminDao){
+		_adminDao = adminDao;
 	}
+	
+	
+	
+
 
 	/* (non-Javadoc)
-	 * @see mum.edu.cs544.services.IAdminService#findById(int)
+	 * @see mum.edu.cs544.services.IAdminService#findById(long)
 	 */
 	@Override
 	public Admin findById(long id) {
-		return adminDao.findOne(id);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/* (non-Javadoc)
@@ -49,7 +60,7 @@ public class AdminService implements IAdminService {
 	 */
 	@Override
 	public void updateAdmin(Admin admin) {
-		 adminDao.save(admin);
+		// TODO Auto-generated method stub
 		
 	}
 
@@ -58,22 +69,40 @@ public class AdminService implements IAdminService {
 	 */
 	@Override
 	public Set<Admin> getAllAdmins() {
-		Set<Admin> result = new HashSet<Admin>();
-        adminDao.findAll().forEach(item -> result.add(item));
-        return result;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/* (non-Javadoc)
-	 * @see mum.edu.cs544.services.IAdminService#remove(mum.edu.cs544.models.Admin)
+	 * @see mum.edu.cs544.services.IAdminService#remove(long)
 	 */
 	@Override
-	public void remove(Admin admin) {
-		adminDao.delete(admin);
+	public void remove(long id) {
+		// TODO Auto-generated method stub
+		
 	}
 
+	/* (non-Javadoc)
+	 * @see mum.edu.cs544.services.IAdminService#checkAdmin(java.lang.String, java.lang.String)
+	 */
 	@Override
-	 public Admin checkAdmin(String email, String password) {
-	        return adminDao.findAdmin(email,password);
-	    }
+	public Admin checkAdmin(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
+
+
+
+
+	/* (non-Javadoc)
+	 * @see mum.edu.cs544.services.IAdminService#addAdmin(mum.edu.cs544.models.Admin)
+	 */
+	@Override
+	public void addAdmin(Admin admin) {
+		// TODO Auto-generated method stub
+		
+	}
 }
+
+
