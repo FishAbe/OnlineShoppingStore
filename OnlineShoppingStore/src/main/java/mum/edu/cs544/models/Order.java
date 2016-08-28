@@ -29,7 +29,7 @@ public class Order {
     private Double totalOrderPrice = null;
 
     @JoinColumn(name = "order_id")
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL /*orphanRemoval = true*/)
     private List<OrderLine> orderLineItems = new ArrayList<OrderLine>(); // can be Final
     
     @Enumerated(EnumType.STRING)
