@@ -15,13 +15,13 @@ public interface IAdminService {
 	
 	void addAdmin(Admin admin);
 	
-    Admin findById(int id);
+    Admin findById(long id);
     
     void updateAdmin(Admin admin);
     
     List<Admin> getAllAdmins();
     
-    void remove(Admin admin);
+    void remove(long id);
     
 }
     
