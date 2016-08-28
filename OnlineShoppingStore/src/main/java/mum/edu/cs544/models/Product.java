@@ -12,6 +12,8 @@ import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import mum.edu.cs544.models.Enum.Status;
+
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity

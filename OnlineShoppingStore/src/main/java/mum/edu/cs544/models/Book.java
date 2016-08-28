@@ -12,6 +12,8 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import mum.edu.cs544.models.Enum.Genre;
+
 /**
  * @author Tarekegn
  * @createdDate Aug 27, 2016

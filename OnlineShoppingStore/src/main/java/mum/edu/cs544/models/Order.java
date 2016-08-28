@@ -11,6 +11,7 @@ import javax.persistence.*;
 
 import mum.edu.cs544.models.Address;
 import mum.edu.cs544.models.OrderLine;
+import mum.edu.cs544.models.Enum.OrderStatus;
 
 @Entity
 @Table(name = "order")

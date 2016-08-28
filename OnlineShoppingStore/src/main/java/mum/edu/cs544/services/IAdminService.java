@@ -4,6 +4,7 @@
 package mum.edu.cs544.services;
 
 import java.util.List;
+import java.util.Set;
 
 import mum.edu.cs544.models.Admin;
 
@@ -15,14 +16,15 @@ public interface IAdminService {
 	
 	void addAdmin(Admin admin);
 	
-    Admin findById(int id);
+    Admin findById(long id);
     
     void updateAdmin(Admin admin);
     
-    List<Admin> getAllAdmins();
+    Set<Admin> getAllAdmins();
     
     void remove(Admin admin);
     
+    Admin checkAdmin(String email, String password);
 }
     
     
