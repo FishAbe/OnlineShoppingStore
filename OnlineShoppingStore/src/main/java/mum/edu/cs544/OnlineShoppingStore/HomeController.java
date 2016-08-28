@@ -19,15 +19,16 @@ public class HomeController {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(HomeController.class);
-	/*
+	
 	private IAuthorService _authorService;
 	
 	//@Autowired
     public HomeController(IAuthorService authorSeervice) {
 
         _authorService = authorSeervice;
-	}*/
+	}
 	
+    public HomeController(){}
 
 	/**
 	 * Selects the home page and populates the model with a message

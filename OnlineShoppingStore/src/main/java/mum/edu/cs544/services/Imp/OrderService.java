@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import mum.edu.cs544.services.IOrderService;
+import mum.edu.cs544.dao.IBookDAO;
 import mum.edu.cs544.dao.IOrderDAO;
-import mum.edu.cs544.dao.OrderDao;
 import mum.edu.cs544.models.Order;
 
 /**
@@ -23,33 +23,39 @@ import mum.edu.cs544.models.Order;
 @Service
 @Transactional
 public class OrderService implements IOrderService{
-	 @Autowired
-	    private OrderDao orderDao;
+	
+	    @Autowired
+	    private IOrderDAO _orderDao;
+	 
+	    @Autowired
+		public OrderService(IOrderDAO orderDao){
+		    _orderDao = orderDao;
+		}
 
 	    @Override
 	    public void addOrder(Order order) {
-	        orderDao.save(order);
+	        _orderDao.save(order);
 	    }
 
 	    @Override
 	    public void updateOrder(Order order) {
-	        orderDao.save(order);
+	        _orderDao.save(order);
 	    }
 
 	    @Override
 	    public void deleteOrder(long id) {
-	        orderDao.delete(id);
+	        _orderDao.delete(id);
 	    }
 
 	    @Override
 	    public Order findById(long id) {
-	        return orderDao.findOne(id);
+	        return _orderDao.findOne(id);
 	    }
 
 	    @Override
 	    public Set<Order> getAllOrders() {
 	        Set<Order> result = new HashSet<>();
-	        orderDao.findAll().forEach(item -> result.add(item));
+	        _orderDao.findAll().forEach(item -> result.add(item));
 	        return result;
 	    }
 

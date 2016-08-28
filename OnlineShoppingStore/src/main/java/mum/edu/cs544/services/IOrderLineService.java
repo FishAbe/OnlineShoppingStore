@@ -13,9 +13,9 @@ import mum.edu.cs544.models.OrderLine;
  * @createdDate Aug 27, 2016
  */
 public interface IOrderLineService {
-	void addOrderLine(Order order);
-    void updateOrderLine(Order order);
+	void addOrderLine(OrderLine orderLine);
+    void updateOrderLine(OrderLine orderLine);
     void deleteOrderLine(long id);
-    Order findById(long id);
-    //Set<OrderLine> getAllOrderLines();
+    OrderLine findById(long id);
+    Set<OrderLine> getAllOrderLines();
 }

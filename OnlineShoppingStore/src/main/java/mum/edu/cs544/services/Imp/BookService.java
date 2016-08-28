@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import mum.edu.cs544.dao.IAdminDAO;
 import mum.edu.cs544.dao.IBookDAO;
 import mum.edu.cs544.models.Book;
 import mum.edu.cs544.models.Product;
@@ -26,8 +27,14 @@ import mum.edu.cs544.services.IBookService;
 public class BookService implements IBookService {
 
     @Autowired
-    private IBookDAO bookDao;
+    private IBookDAO _bookDao;
   //  @Autowired private CategoryDao categoryDao;
+    
+    @Autowired
+	public BookService(IBookDAO bookDao){
+		_bookDao = bookDao;
+	}
+    
     @Override
     public void add(Book book) {
         int quantity = book.getQuantity();
@@ -39,44 +46,44 @@ public class BookService implements IBookService {
                 book.addProductCopy(copy);
             }
         }
-        bookDao.save(book);
+        _bookDao.save(book);
     }
 
     @Override
     public void update(Book book) {
-        bookDao.save(book);
+        _bookDao.save(book);
     }
 
     @Override
     public void delete(long id) {
-        bookDao.delete(id);
+        _bookDao.delete(id);
     }
 
     @Override
     public Book findById(long id) {
-        return bookDao.findOne(id);
+        return _bookDao.findOne(id);
     }
 
     @Override
     public Set<Book> getAll() {
         Set<Book> result = new HashSet<>();
-        bookDao.findAll().forEach(item -> result.add(item));
+        _bookDao.findAll().forEach(item -> result.add(item));
         return result;
     }
 
     @Override
     public int getProductCopies(Product p) {
-        return bookDao.getProductCopies(p);
+        return _bookDao.getProductCopies(p);
     }
 
     @Override
     public Set<Book> getLastest6Books() {
-        return bookDao.findFirst6ByOrderByIdDesc();
+        return _bookDao.findFirst6ByOrderByIdDesc();
     }
 
     @Override
     public Set<Book> get2SpecialDiscountedBook() {
-        return bookDao.findFirst2ByOrderByDiscountDesc();
+        return _bookDao.findFirst2ByOrderByDiscountDesc();
     }
 /*
     @Override

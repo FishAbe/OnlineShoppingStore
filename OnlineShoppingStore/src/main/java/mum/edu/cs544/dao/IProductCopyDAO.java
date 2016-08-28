@@ -14,5 +14,5 @@ import mum.edu.cs544.models.ProductCopy;
  * @createdDate Aug 28, 2016
  */
 @Repository
-public interface ProductCopyDAO extends JpaRepository<ProductCopy,Long> {
+public interface IProductCopyDAO extends JpaRepository<ProductCopy,Long> {
 }

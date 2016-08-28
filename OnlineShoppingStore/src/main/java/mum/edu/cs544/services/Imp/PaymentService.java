@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import mum.edu.cs544.dao.IPaymentDAO;
-import mum.edu.cs544.models.Order;
 import mum.edu.cs544.models.Payment;
 import mum.edu.cs544.services.IPaymentService;
 
@@ -25,7 +24,12 @@ import mum.edu.cs544.services.IPaymentService;
 public class PaymentService implements IPaymentService {
 	
 	@Autowired
-	IPaymentDAO paymentDao;
+	IPaymentDAO _paymentDao;
+	
+	@Autowired
+	public PaymentService(IPaymentDAO orderDao){
+		_paymentDao = orderDao;
+	}
 
 	/* (non-Javadoc)
 	 * @see mum.edu.cs544.services.IPaymentService#addPayment(mum.edu.cs544.models.Payment)
@@ -33,7 +37,7 @@ public class PaymentService implements IPaymentService {
 	@Override
 	public void addPayment(Payment payment) {
 		// TODO Auto-generated method stub
-		paymentDao.save(payment);
+		_paymentDao.save(payment);
 		
 	}
 
@@ -44,7 +48,7 @@ public class PaymentService implements IPaymentService {
 	public Set<Payment> getAllPayments() {
 		// TODO Auto-generated method stub
 		Set<Payment> result = new HashSet<>();
-		paymentDao.findAll().forEach(item -> result.add(item));
+		_paymentDao.findAll().forEach(item -> result.add(item));
         return result;
 	}
 
@@ -54,7 +58,7 @@ public class PaymentService implements IPaymentService {
 	@Override
 	public Payment findById(long id) {
 		// TODO Auto-generated method stub
-		return paymentDao.findOne(id);
+		return _paymentDao.findOne(id);
 	}
 
 	/* (non-Javadoc)
@@ -63,7 +67,7 @@ public class PaymentService implements IPaymentService {
 	@Override
 	public void updatePayment(Payment payment) {
 		// TODO Auto-generated method stub
-		paymentDao.save(payment);
+		_paymentDao.save(payment);
 		
 	}
 
@@ -73,7 +77,7 @@ public class PaymentService implements IPaymentService {
 	@Override
 	public void remove(long id) {
 		// TODO Auto-generated method stub
-		paymentDao.delete(id);
+		_paymentDao.delete(id);
 	}
 
 }

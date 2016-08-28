@@ -3,10 +3,11 @@
  */
 package mum.edu.cs544.dao;
 
-import org.group5.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import mum.edu.cs544.models.Order;
 
 /**
  * @author Tarekegn
