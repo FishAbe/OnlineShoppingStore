@@ -1,6 +1,7 @@
 package mum.edu.cs544.services;
 
 import java.util.List;
+import java.util.Set;
 
 import mum.edu.cs544.models.Customer;
 
@@ -8,14 +9,14 @@ public interface ICustomerService {
 
 	void addCustomer(Customer customer);
 
-	 Customer findById(int id);
+	 Customer findById(long id);
 
 	void updateCustomer(Customer customer);
 	
-	List<Customer> getAllCustomers();
+	Set<Customer> getAllCustomers();
 	
-	void remove(Customer customer);
+	void removeCustomer(long id);
 	
+	Customer getCustomer(String email, String password);
 	
-
 }

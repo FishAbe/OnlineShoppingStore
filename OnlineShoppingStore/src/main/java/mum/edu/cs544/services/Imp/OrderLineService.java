@@ -6,38 +6,34 @@ package mum.edu.cs544.services.Imp;
 import java.util.HashSet;
 import java.util.Set;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import mum.edu.cs544.services.IOrderService;
-import mum.edu.cs544.dao.IOrderDAO;
 import mum.edu.cs544.dao.OrderDao;
 import mum.edu.cs544.models.Order;
+import mum.edu.cs544.models.OrderLine;
+import mum.edu.cs544.services.IOrderLineService;
+import mum.edu.cs544.services.IOrderService;
 
 /**
  * @author Tarekegn
- * @createdDate Aug 27, 2016
+ * @createdDate Aug 28, 2016
  */
-@Service
-@Transactional
-public class OrderService implements IOrderService{
+public class OrderLineService implements IOrderLineService{
 	 @Autowired
 	    private OrderDao orderDao;
 
 	    @Override
-	    public void addOrder(Order order) {
+	    public void addOrderLine(Order order) {
 	        orderDao.save(order);
 	    }
 
 	    @Override
-	    public void updateOrder(Order order) {
+	    public void updateOrderLine(Order order) {
 	        orderDao.save(order);
 	    }
 
 	    @Override
-	    public void deleteOrder(long id) {
+	    public void deleteOrderLine(long id) {
 	        orderDao.delete(id);
 	    }
 
@@ -45,13 +41,12 @@ public class OrderService implements IOrderService{
 	    public Order findById(long id) {
 	        return orderDao.findOne(id);
 	    }
-
+/*
 	    @Override
-	    public Set<Order> getAllOrders() {
-	        Set<Order> result = new HashSet<>();
+	    public Set<OrderLine> getAllOrderLines() {
+	        Set<OrderLine> result = new HashSet<>();
 	        orderDao.findAll().forEach(item -> result.add(item));
 	        return result;
 	    }
-
-		
+*/	    
 }

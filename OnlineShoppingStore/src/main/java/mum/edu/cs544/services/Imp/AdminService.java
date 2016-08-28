@@ -13,14 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import mum.edu.cs544.dao.AdminDAO;
+import mum.edu.cs544.dao.IAdminDAO;
 
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 
-
-import mum.edu.cs544.dao.IAdminDAO;
 
 import mum.edu.cs544.models.Admin;
 import mum.edu.cs544.services.IAdminService;
@@ -43,7 +41,15 @@ public class AdminService implements IAdminService {
 	}
 	
 	
-	
+	/* (non-Javadoc)
+	 * @see mum.edu.cs544.services.IAdminService#addAdmin(mum.edu.cs544.models.Admin)
+	 */
+	@Override
+	public void addAdmin(Admin admin) {
+		_adminDao.save(admin);
+		
+	}
+
 
 
 	/* (non-Javadoc)
@@ -51,8 +57,8 @@ public class AdminService implements IAdminService {
 	 */
 	@Override
 	public Admin findById(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return _adminDao.findOne(id);
+
 	}
 
 	/* (non-Javadoc)
@@ -60,7 +66,7 @@ public class AdminService implements IAdminService {
 	 */
 	@Override
 	public void updateAdmin(Admin admin) {
-		// TODO Auto-generated method stub
+		_adminDao.save(admin);
 		
 	}
 
@@ -69,8 +75,10 @@ public class AdminService implements IAdminService {
 	 */
 	@Override
 	public Set<Admin> getAllAdmins() {
-		// TODO Auto-generated method stub
-		return null;
+		Set<Admin> result = new HashSet<Admin>();
+        _adminDao.findAll().forEach(item -> result.add(item));
+        return result;
+
 	}
 
 	/* (non-Javadoc)
@@ -78,7 +86,7 @@ public class AdminService implements IAdminService {
 	 */
 	@Override
 	public void remove(long id) {
-		// TODO Auto-generated method stub
+		_adminDao.delete(id);
 		
 	}
 
@@ -88,21 +96,13 @@ public class AdminService implements IAdminService {
 	@Override
 	public Admin checkAdmin(String email, String password) {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
-
-
-	/* (non-Javadoc)
-	 * @see mum.edu.cs544.services.IAdminService#addAdmin(mum.edu.cs544.models.Admin)
-	 */
-	@Override
-	public void addAdmin(Admin admin) {
-		// TODO Auto-generated method stub
 		
+		return  _adminDao.findAdmin(email,password);
 	}
 }
+
+
+
+	
 
 

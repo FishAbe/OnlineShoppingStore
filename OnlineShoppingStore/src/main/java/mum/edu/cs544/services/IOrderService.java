@@ -8,9 +8,9 @@ import java.util.Set;
 
 import mum.edu.cs544.models.Order;
 public interface IOrderService {
-	   void addOrder(Order transaction);
-	    void updateOrder(Order transaction);
+	   void addOrder(Order order);
+	    void updateOrder(Order order);
 	    void deleteOrder(long id);
 	    Order findById(long id);
-	    Set<Order> getAllOrder();
+	    Set<Order> getAllOrders();
 }

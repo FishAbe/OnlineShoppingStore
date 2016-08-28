@@ -17,5 +17,5 @@ public interface IProductCopyService {
     void updateProductCopy(ProductCopy copy);
     void deleteProductCopy(long id);
     ProductCopy findById(long id);
-    Set<ProductCopy> getAllProductCopy();
+    Set<ProductCopy> getAllProductCopies();
 }

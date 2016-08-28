@@ -10,6 +10,8 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
+
+import mum.edu.cs544.models.ProductCopy;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import mum.edu.cs544.models.Enum.Status;
@@ -105,4 +107,21 @@ public abstract class Product {
 	public void setProductCopies(List<ProductCopy> productCopies) {
 		this.productCopies = productCopies;
 	}
+	
+	@Transient
+    private int quantity;
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+    
+    
+    public void addProductCopy(ProductCopy copy){
+    	copy.setProduct(this);
+        this.productCopies.add(copy);
+    }
 }
