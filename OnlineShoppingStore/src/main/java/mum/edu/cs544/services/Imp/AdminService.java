@@ -24,7 +24,6 @@ import mum.edu.cs544.models.Admin;
 import mum.edu.cs544.services.IAdminService;
 
 /**
-<<<<<<< HEAD
  * @author Tarekegn
  * @createdDate Aug 27, 2016
  */

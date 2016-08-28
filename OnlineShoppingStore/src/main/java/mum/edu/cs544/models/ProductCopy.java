@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 
 
-@Entity
+//@Entity
 public class ProductCopy {
 	@Id
     @GeneratedValue

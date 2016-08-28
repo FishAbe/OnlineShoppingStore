@@ -14,6 +14,8 @@ import javax.validation.constraints.DecimalMin;
 import mum.edu.cs544.models.ProductCopy;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import mum.edu.cs544.models.Enum.Status;
 
 
@@ -40,10 +42,10 @@ public abstract class Product {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @OneToMany(cascade = CascadeType.ALL)
+   /* @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_id")
-    //@JsonIgnore
-    private List<ProductCopy> productCopies = new ArrayList<ProductCopy>();
+    @JsonIgnore*/
+    //private List<ProductCopy> productCopies = new ArrayList<ProductCopy>();
 
     public Product(String name, String description) {
         this.name = name;
@@ -100,13 +102,13 @@ public abstract class Product {
 		this.status = status;
 	}
 
-	public List<ProductCopy> getProductCopies() {
+	/*public List<ProductCopy> getProductCopies() {
 		return productCopies;
 	}
 
 	public void setProductCopies(List<ProductCopy> productCopies) {
 		this.productCopies = productCopies;
-	}
+	}*/
 	
 	@Transient
     private int quantity;
@@ -122,6 +124,6 @@ public abstract class Product {
     
     public void addProductCopy(ProductCopy copy){
     	copy.setProduct(this);
-        this.productCopies.add(copy);
+        //this.productCopies.add(copy);
     }
 }

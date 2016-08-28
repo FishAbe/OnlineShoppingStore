@@ -14,3 +14,4 @@ OnlineShoppingStore/.classpath
 OnlineShoppingStore/.project
 OnlineShoppingStore/.settings/
 OnlineShoppingStore/src/main/webapp/META-INF/MANIFEST.MF
+OnlineShoppingStore/src/main/resources/db.properties

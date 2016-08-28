@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import mum.edu.cs544.models.Author;
 import mum.edu.cs544.services.IAuthorService;
 
+
 /**
  * Sample controller for going to the home page with a message
  */
@@ -19,14 +20,14 @@ public class HomeController {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(HomeController.class);
-	/*
+	
 	private IAuthorService _authorService;
 	
-	//@Autowired
+	@Autowired
     public HomeController(IAuthorService authorSeervice) {
 
         _authorService = authorSeervice;
-	}*/
+	}
 	
 
 	/**
@@ -41,7 +42,7 @@ public class HomeController {
 		Author author = new Author();
 		author.setFirstName("fisseha");
 		author.setLastName("chari");
-		//_authorService.addAuthor(author);
+		_authorService.addAuthor(author);
 		return "home";
 	}
 
