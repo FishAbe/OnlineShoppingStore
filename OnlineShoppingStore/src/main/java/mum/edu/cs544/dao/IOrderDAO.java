@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
  * @author Tarekegn
  * @createdDate Aug 28, 2016
  */
-
+@Repository
 public interface IOrderDAO extends CrudRepository<Order,Long> {
 
 	
