@@ -6,7 +6,10 @@ import javax.validation.constraints.Null;
 
 import org.hibernate.validator.constraints.Email;
 
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="role")
 @Entity
+@Table(name="USER")
 public class Person {
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
@@ -31,6 +34,21 @@ public class Person {
 	public Person(){
 		
 	}
+	
+	 public Person(String firstName, String lastName, Address address,
+             String email, String password
+             ){
+   this.email = email;
+   this.password = password;
+   this.firstName = firstName;
+   this.lastName = lastName;
+   this.address = address;
+}
+
+public Person(String email, String password){
+   this.email = email;
+   this.password = password;
+}
 
 	public long getId() {
 		return id;

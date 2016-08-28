@@ -4,24 +4,24 @@ package mum.edu.cs544.models;
  * @createdDate Aug 27, 2016
  */
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.*;
-import org.hibernate.validator.constraints.Range;
 import org.springframework.beans.factory.annotation.Value;
 
 @Embeddable
 public class Address {
 
-   @NotBlank
+   @NotNull
     private String street;
 
-   @NotBlank
+   @NotNull
     private String city;
 
-   @NotBlank
+   @NotNull
     private String state;
 
-   @NotBlank
+   @NotNull
    @Range(min = 1, max = 999999)
    @Value("52557")
     private String zip;
