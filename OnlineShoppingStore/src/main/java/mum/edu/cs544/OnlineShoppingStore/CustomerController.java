@@ -6,6 +6,7 @@ package mum.edu.cs544.OnlineShoppingStore;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -36,19 +37,8 @@ public class CustomerController {
 
 	@RequestMapping(value = {"/customer", "/Customer"}, method = RequestMethod.GET)
 	public String index(Model model) {
-        Customer customer = new Customer();
-        customer.setId(1);
-        customer.setEmail("abebefisseha@gmail.com");
-        customer.setFirstName("fisseha");
-        customer.setLastName("chari");
-        Customer customer2 = new Customer();
-        customer2.setId(2);
-        customer2.setEmail("abebefisseha@gmail.com");
-        customer2.setFirstName("fisseha");
-        customer2.setLastName("chari");
-		List<Customer> customerList = new ArrayList<>();
-		customerList.add(customer);
-		customerList.add(customer2);
+       
+		Set<Customer> customerList = _customerService.getAllCustomers();
 		model.addAttribute("customerList", customerList);
 
 		return "customer/customerlist";
@@ -63,10 +53,10 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/customer/add", method = RequestMethod.POST)
-	public String add(Customer customer, BindingResult result) {
+	public String add(@Valid Customer customer, BindingResult result) {
         customer.setUserName("fiseha");
-        customer.getAddress().setCity("fjksf");
-        customer.getAddress().setState("usa");
+        
+        customer.setAddress(customer.getAddress());
 		System.out.println(result.hasErrors());
 		
 		System.out.println("ErrorCount" + result.getErrorCount());
@@ -91,7 +81,7 @@ public class CustomerController {
 	public String update(@PathVariable int id,Model model){
 		Customer customer = _customerService.findById(id);
 		model.addAttribute("customer",customer);
-		return "customer/update";
+		return "customer/updateCustomer";
 		
 	}
 	@RequestMapping(value = "/customer/update/{id}", method = RequestMethod.POST)
