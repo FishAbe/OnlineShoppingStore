@@ -54,6 +54,34 @@ public Person(String email, String password){
 		return id;
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
