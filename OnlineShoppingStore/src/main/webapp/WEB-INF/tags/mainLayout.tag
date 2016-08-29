@@ -16,6 +16,8 @@
         <title>${pageTitle}</title>
         <link rel="stylesheet" href='<c:url value="/resources/styles/main.css"/>'>
         <link rel="stylesheet" href='<c:url value="/resources/styles/animate.min.css"/>'>
+        <link href="<c:url value="/resources/css/bootstrap.min.css" />"
+	rel="stylesheet" type="text/css" />
     </head>
     <body>
         <t:modal></t:modal>
@@ -29,5 +31,9 @@
     <script src='<spring:url value="/resources/scripts/select2.full.min.js"/>'></script>
     <script src='<spring:url value="/resources/scripts/main.js"/>'></script>
     <script src='<spring:url value="/resources/scripts/prism.js"/>'></script>
+    <script type="text/javascript"
+		src="<c:url value="/resources/js/jquery-1.12.3.min.js" />"></script>
+	<script type="text/javascript"
+		src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
     </body>
 </html>

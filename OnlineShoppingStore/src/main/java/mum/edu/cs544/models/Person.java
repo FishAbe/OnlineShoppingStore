@@ -14,19 +14,19 @@ public class Person {
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-    @NotNull
+    @NotNull(message="First Name is Required")
 	private String firstName;
 	
-    @NotNull
+    @NotNull(message="First Name is Required")
 	private String lastName;
 	
-    @Email
+    @Email(message="Invalid Email!")
 	private String email;
 	
     @NotNull
 	private String userName;
 	
-    @Null
+    @NotNull
 	private String password;
     
     private Address address;

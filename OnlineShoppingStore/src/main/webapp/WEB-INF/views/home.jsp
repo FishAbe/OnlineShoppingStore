@@ -27,6 +27,9 @@
                     <li class="page-scroll">
                         <a href="#portfolio">Login</a>
                     </li>
+                     <li class="page-scroll">
+                        <a href="/OnlineShoppingStore/spring/customer">Customer</a>
+                    </li>
                     <li class="page-scroll">
                         <a href="#about">About</a>
                     </li>
