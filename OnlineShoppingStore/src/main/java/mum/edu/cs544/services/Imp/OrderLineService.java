@@ -7,8 +7,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-import mum.edu.cs544.dao.ILaptopDAO;
 import mum.edu.cs544.dao.IOrderLineDAO;
 import mum.edu.cs544.dao.IOrderDAO;
 import mum.edu.cs544.models.Order;

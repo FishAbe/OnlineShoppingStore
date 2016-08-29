@@ -16,11 +16,11 @@ public interface IBookService {
     Book findById(long id);
     Set<Book> getAll();
 
-    int getProductCopies(Product p);
-
+    /*int getProductCopies(Product p);*/
+/*
     Set<Book> getLastest6Books();
 
     Set<Book> get2SpecialDiscountedBook();
 
-    Set<Book> getBookByCategory(long categoryId);
+    Set<Book> getBookByCategory(long categoryId);*/
 }
