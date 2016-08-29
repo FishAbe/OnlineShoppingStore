@@ -8,9 +8,9 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<t:mainLayout pageTitle="Welcome to SnippetHub">
+<t:mainLayout pageTitle="Welcome">
     <jsp:body>
-        <t:marketing></t:marketing>
+          <t:marketing></t:marketing>
             <!-- End Marketing -->
             <div class="snippets-container">
                 <div class="container">

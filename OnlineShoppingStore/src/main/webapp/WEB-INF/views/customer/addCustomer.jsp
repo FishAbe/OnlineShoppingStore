@@ -1,20 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="<c:url value="/resources/css/bootstrap.min.css" />"
-	rel="stylesheet" type="text/css" />
-<title>Add Customer</title>
-</head>
-<body>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<t:mainLayout pageTitle="Add Customer">
+    <jsp:body>
+
+
+
 <div class="well" style="width: 60%;margin: auto">
 		<h2>Customer Registration</h2>
 		<form:form modelAttribute="customer"
-			action="/customer/add" method="post">
+			action="/OnlineShoppingStore/spring/customer/add">
 			<br/>
 			<h3>Personal Info</h3>
 			<div class="row">
@@ -122,5 +120,5 @@
 		</form:form>
 	</div>
 
-</body>
-</html>
+  </jsp:body>
+</t:mainLayout>

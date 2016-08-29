@@ -63,8 +63,10 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/customer/add", method = RequestMethod.POST)
-	public String add( Customer customer, BindingResult result) {
-
+	public String add(Customer customer, BindingResult result) {
+        customer.setUserName("fiseha");
+        customer.getAddress().setCity("fjksf");
+        customer.getAddress().setState("usa");
 		System.out.println(result.hasErrors());
 		
 		System.out.println("ErrorCount" + result.getErrorCount());
