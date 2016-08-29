@@ -28,8 +28,8 @@
          <c:choose>
              <c:when test="${loggedInUser.firstName == null}">
                  <ul class="list-inline">
-                     <li><a href='<c:url value="/login"/>'>Login</a></li>
-                     <li><a class="register" href='<c:url value="/register"/>'>Register</a></li>
+                     <li><a href='<c:url value="/user/login"/>'>Login</a></li>
+                     <li><a class="register" href='<c:url value="user/register"/>'>Register</a></li>
                  </ul>
              </c:when>
              <c:when test="${loggedInUser.firstName != null}">
