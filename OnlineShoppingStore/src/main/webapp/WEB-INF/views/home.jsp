@@ -51,12 +51,6 @@
             </div>
         </div>
     </header>
-<h1> 
-	Hello world!
-</h1>
-<div>
-${controllerMessage}
-</div>
 
 <script type="text/javascript"
 		src="<c:url value="/resources/js/jquery-1.12.3.min.js" />"></script>

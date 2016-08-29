@@ -1,8 +1,3 @@
-<%-- 
-    Document   : page1
-    Created on : May 16, 2016, 5:57:07 PM
-    Author     : tekeste
---%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>

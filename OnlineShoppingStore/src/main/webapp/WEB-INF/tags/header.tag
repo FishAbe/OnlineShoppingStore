@@ -1,9 +1,3 @@
-<%-- 
-    Document   : header
-    Created on : Aug 28, 2016, 11:07:13 PM
-    Author     : Tarekegn
---%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@tag description="Navigation" pageEncoding="UTF-8"%>
       <div class="header">

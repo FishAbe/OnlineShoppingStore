@@ -1,8 +1,3 @@
-<%-- 
-    Document   : marketing
-    Created on : May 16, 2016, 8:45:26 PM
-    Author     : tekeste
---%>
 
 <%@tag description="marketing peiece" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
