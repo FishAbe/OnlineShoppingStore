@@ -3,6 +3,7 @@
  */
 package mum.edu.cs544.dao;
 
+import java.util.List;
 import java.util.Set;
 
 
@@ -21,11 +22,8 @@ import mum.edu.cs544.models.Product;
 	public interface IBookDAO extends JpaRepository<Book,Long> {
 	    //we don't need an implementation and or method unless we want to do something extra
 
-//	    @Query("SELECT b FROM Book b")
-//	    List<Book> getBookWithCategory();
-
-	      @Query("SELECT count(pc.id) FROM ProductCopy pc JOIN pc.product p where p=:product")
-	      int getProductCopies(@Param("product") Product product);
+	    @Query("SELECT b FROM Book b")
+	    List<Book> getBookWithCategory();
 
 	      //Get the top book by Id
 	      Set<Book> findFirst6ByOrderByIdDesc();

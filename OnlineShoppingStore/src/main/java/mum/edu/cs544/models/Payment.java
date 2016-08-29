@@ -8,6 +8,7 @@ import javax.persistence.*;
  * @author Tarekegn
  * @createdDate Aug 27, 2016
  */
+@Entity
 public class Payment {
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)

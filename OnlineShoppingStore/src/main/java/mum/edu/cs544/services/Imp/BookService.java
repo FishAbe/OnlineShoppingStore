@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 import mum.edu.cs544.dao.IBookDAO;
 import mum.edu.cs544.models.Book;
 import mum.edu.cs544.models.Product;
-import mum.edu.cs544.models.ProductCopy;
 import mum.edu.cs544.services.IBookService;
 
 /**
@@ -28,11 +27,11 @@ public class BookService implements IBookService {
     @Autowired
     private IBookDAO bookDao;
   //  @Autowired private CategoryDao categoryDao;
-    @Override
+    /*@Override
     public void add(Book book) {
         int quantity = book.getQuantity();
 
-        /* add the product copies */
+         add the product copies 
         if(quantity > 0) {
             while (quantity-- > 0) {
                 ProductCopy copy = new ProductCopy();
@@ -40,7 +39,7 @@ public class BookService implements IBookService {
             }
         }
         bookDao.save(book);
-    }
+    }*/
 
     @Override
     public void update(Book book) {
@@ -64,12 +63,8 @@ public class BookService implements IBookService {
         return result;
     }
 
-    @Override
-    public int getProductCopies(Product p) {
-        return bookDao.getProductCopies(p);
-    }
 
-    @Override
+   /* @Override
     public Set<Book> getLastest6Books() {
         return bookDao.findFirst6ByOrderByIdDesc();
     }
@@ -77,7 +72,7 @@ public class BookService implements IBookService {
     @Override
     public Set<Book> get2SpecialDiscountedBook() {
         return bookDao.findFirst2ByOrderByDiscountDesc();
-    }
+    }*/
 /*
     @Override
     public Set<Book> getBookByCategory(long categoryId) {
@@ -89,10 +84,16 @@ public class BookService implements IBookService {
 	/* (non-Javadoc)
 	 * @see mum.edu.cs544.services.IBookService#getBookByCategory(long)
 	 */
-	@Override
+	/*@Override
 	public Set<Book> getBookByCategory(long categoryId) {
-		// TODO Auto-generated method stub
+		
 		return null;
+	}*/
+
+	@Override
+	public void add(Book book) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
