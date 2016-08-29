@@ -43,7 +43,7 @@ public class HomeController {
 		Author author = new Author();
 		author.setFirstName("fisseha");
 		author.setLastName("chari");
-		_authorService.addAuthor(author);
+		//_authorService.addAuthor(author);
 		return "home";
 	}
 
