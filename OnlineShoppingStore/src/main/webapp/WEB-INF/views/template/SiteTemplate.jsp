@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="t" tagdir="/WEB-INF/views/template" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -15,19 +16,24 @@
 </style>
 </head>
 <body>
+
+       
+           
+     
+
 	<div class="container-fluid" style="border: #C1C1C1 solid 1px; border-radius: 10px; margin:5px;">
 		<!-- Header -->
-		<tiles:insertAttribute name="header" />
+		<t:header></t:header>
 		<!-- Menu Page -->
 		<div class="col-md-12" style="background-color: #FCFCFC;">
 			<tiles:insertAttribute name="menu" />
 		</div>
 		<!-- Body Page -->
 		<div class="col-md-12" style="height:500px;">
-			<tiles:insertAttribute name="body" />
+			<jsp:doBody/>
 		</div>
 		<!-- Footer Page -->
-		<tiles:insertAttribute name="footer" />
+		<t:footer></t:footer>
 	</div>
 
 

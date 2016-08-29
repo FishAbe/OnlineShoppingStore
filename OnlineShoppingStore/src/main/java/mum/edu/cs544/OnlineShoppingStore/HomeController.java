@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import mum.edu.cs544.models.Author;
+import mum.edu.cs544.models.Person;
 import mum.edu.cs544.services.IAuthorService;
 
 
@@ -43,8 +44,16 @@ public class HomeController {
 		Author author = new Author();
 		author.setFirstName("fisseha");
 		author.setLastName("chari");
-		//_authorService.addAuthor(author);
 		return "home";
 	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Model model) {
+		Person person=new Person();
+		model.addAttribute("currentUser",person);
+		return "user/login";
+	}
+	
+	
 
 }
