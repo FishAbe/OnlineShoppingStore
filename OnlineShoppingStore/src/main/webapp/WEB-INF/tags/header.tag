@@ -1,45 +1,50 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@tag description="Navigation" pageEncoding="UTF-8"%>
-      <div class="header">
-        <div class="brand" style="text-align:center">
-            <a href='<c:url value="/"/>'>
-                <h1>
-                    Online Shopping 
-                </h1>
-            </a>
+       <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Online Shopping Store</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="user/login">Login</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/OnlineShoppingStore/spring/customer">Customer</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <br>
-        <nav class="main-nav">
-        <c:choose>
-        <c:when test="${loggedInUser.firstName != null}">
-          <ul class="list-inline">
-              <li><a href='<c:url value="/"/>'>Home</a></li>
-              <li><a href='<c:url value="/products"/>'>Products</a></li>
-              <li><a href='<c:url value="/customer"/>'>Customers</a></li>
-              <li><a href='<c:url value="/book"/>'>Book</a></li>
-              <li><a href='<c:url value="/laptops"/>'>Laptop</a></li>
-              <li><a href='<c:url value="/orders"/>'>Orders</a></li>
-          </ul>
-            </c:when>
-         </c:choose>
-        </nav>
-        <div class="account">
-         
-         <c:choose>
-             <c:when test="${loggedInUser.firstName == null}">
-                 <ul class="list-inline">
-                     <li><a href='<c:url value="/login"/>'>Login</a></li>
-                     <li><a class="register" href='<c:url value="/register"/>'>Register</a></li>
-                 </ul>
-             </c:when>
-             <c:when test="${loggedInUser.firstName != null}">
-                 <ul class="list-inline">
-                     <li><a class="" href='<c:url value="/snippets/create"/>'>New Snippet</a></li>
-                     <li><a class="" href='<c:url value="/users/${loggedInUser.slug}"/>'>${loggedInUser.firstName}</a></li>
-                     <li><a href='<c:url value="/logout"/>'>Logout</a></li>
-                 </ul>
-             </c:when>
-         </c:choose>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="img/profile.png" alt="">
+                    <
+                </div>
+            </div>
         </div>
-      </div>
+    </header>
+    <br/>
       <!-- End Header -->

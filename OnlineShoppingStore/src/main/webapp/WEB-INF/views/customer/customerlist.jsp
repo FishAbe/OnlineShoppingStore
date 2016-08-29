@@ -43,8 +43,6 @@
 								<span class="fa fa-save"></span> Update</a>
 								<a class="btn  btn-danger"  href="customer/delete/${customer.id}">
 								<span class="fa fa-lg fa-times-circle"></span> Delete</a>
-								
-							
 						</td>
 					</tr>
 				</c:forEach>
