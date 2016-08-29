@@ -6,15 +6,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="<c:url value="/resources/css/bootstrap.min.css" />"
-	rel="stylesheet" type="text/css" />
-<title>Add Customer</title>
+<title>Insert title here</title>
 </head>
 <body>
+
+<h2>Update Customer</h2>
 <div class="well" style="width: 60%;margin: auto">
 		<h2>Customer Registration</h2>
 		<form:form modelAttribute="customer"
-			action="/customer/add" method="post">
+			action="${pageContext.request.contextPath}/customer/update/${customer.id}" method="post">
 			<br/>
 			<h3>Personal Info</h3>
 			<div class="row">

@@ -3,6 +3,7 @@
  */
 package mum.edu.cs544.OnlineShoppingStore;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -34,8 +36,19 @@ public class CustomerController {
 
 	@RequestMapping(value = {"/customer", "/Customer"}, method = RequestMethod.GET)
 	public String index(Model model) {
-
-		List<Customer> customerList = Arrays.asList(new Customer(),new Customer());
+        Customer customer = new Customer();
+        customer.setId(1);
+        customer.setEmail("abebefisseha@gmail.com");
+        customer.setFirstName("fisseha");
+        customer.setLastName("chari");
+        Customer customer2 = new Customer();
+        customer2.setId(2);
+        customer2.setEmail("abebefisseha@gmail.com");
+        customer2.setFirstName("fisseha");
+        customer2.setLastName("chari");
+		List<Customer> customerList = new ArrayList<>();
+		customerList.add(customer);
+		customerList.add(customer2);
 		model.addAttribute("customerList", customerList);
 
 		return "customer/customerlist";
@@ -50,7 +63,7 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/customer/add", method = RequestMethod.POST)
-	public String add(@Valid Customer customer, BindingResult result) {
+	public String add( Customer customer, BindingResult result) {
 
 		System.out.println(result.hasErrors());
 		
@@ -68,6 +81,23 @@ public class CustomerController {
 		_customerService.addCustomer(customer);
 	
 		System.out.println("Customer added");
+		
+		return "redirect:/customer";
+	}
+	
+	@RequestMapping(value="/customer/update/{id}",method = RequestMethod.GET)
+	public String update(@PathVariable int id,Model model){
+		Customer customer = _customerService.findById(id);
+		model.addAttribute("customer",customer);
+		return "customer/update";
+		
+	}
+	@RequestMapping(value = "/customer/update/{id}", method = RequestMethod.POST)
+	public String update(@Valid Customer customer,@PathVariable int id, BindingResult result){
+		
+		if(result.hasErrors())
+			return "redirect:/customer/update/" + id;
+		_customerService.updateCustomer(customer);
 		
 		return "redirect:/customer";
 	}
