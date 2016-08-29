@@ -29,6 +29,7 @@ public class HomeController {
         _authorService = authorSeervice;
 	}
 	
+    public HomeController(){}
 
 	/**
 	 * Selects the home page and populates the model with a message

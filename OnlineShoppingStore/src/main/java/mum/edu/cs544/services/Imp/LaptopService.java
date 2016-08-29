@@ -8,7 +8,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-
+import mum.edu.cs544.dao.IBookDAO;
 import mum.edu.cs544.dao.ILaptopDAO;
 import mum.edu.cs544.models.Laptop;
 import mum.edu.cs544.models.Product;
@@ -21,9 +21,14 @@ import mum.edu.cs544.services.ILaptopService;
 public class LaptopService implements ILaptopService {
 
     @Autowired
-    private ILaptopDAO laptopDao;
+    private ILaptopDAO _laptopDao;
   //  @Autowired private CategoryDao categoryDao;
-
+    
+    @Autowired
+	public LaptopService(ILaptopDAO laptopDao){
+    	_laptopDao = laptopDao;
+	}
+    
     
      (non-Javadoc)
      * @see mum.edu.cs544.services.ILaptopService#add(mum.edu.cs544.models.Laptop)
@@ -31,7 +36,7 @@ public class LaptopService implements ILaptopService {
     @Override
     public void add(Laptop laptop) {
     	// TODO Auto-generated method stub
-    	laptopDao.save(laptop);
+    	_laptopDao.save(laptop);
     }
 
      (non-Javadoc)
@@ -40,30 +45,30 @@ public class LaptopService implements ILaptopService {
     @Override
     public void update(Laptop laptop) {
     	// TODO Auto-generated method stub
-    	laptopDao.save(laptop);
+    	_laptopDao.save(laptop);
     	
     }
  
     @Override
     public void delete(long id) {
-        laptopDao.delete(id);
+        _laptopDao.delete(id);
     }
 
     @Override
     public Laptop findById(long id) {
-        return laptopDao.findOne(id);
+        return _laptopDao.findOne(id);
     }
 
     @Override
     public Set<Laptop> getAll() {
         Set<Laptop> result = new HashSet<>();
-        laptopDao.findAll().forEach(item -> result.add(item));
+        _laptopDao.findAll().forEach(item -> result.add(item));
         return result;
     }
 
     @Override
     public int getProductCopies(Product p) {
-        return laptopDao.getProductCopies(p);
+        return _laptopDao.getProductCopies(p);
     }
 
 
@@ -74,7 +79,7 @@ public class LaptopService implements ILaptopService {
 @Override
 public Set<Laptop> getLastest6Laptops() {
 	// TODO Auto-generated method stub
-	 return laptopDao.findFirst6ByOrderByIdDesc();
+	 return _laptopDao.findFirst6ByOrderByIdDesc();
 }
 
  (non-Javadoc)
@@ -83,7 +88,7 @@ public Set<Laptop> getLastest6Laptops() {
 @Override
 public Set<Laptop> get2SpecialDiscountedLaptop() {
 	// TODO Auto-generated method stub
-	 return laptopDao.findFirst2ByOrderByDiscountDesc();
+	 return _laptopDao.findFirst2ByOrderByDiscountDesc();
 }
 
  (non-Javadoc)
