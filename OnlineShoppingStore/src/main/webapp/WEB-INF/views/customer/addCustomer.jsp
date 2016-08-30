@@ -77,7 +77,7 @@
 				<div class="col-md-4">
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1">City</span>
-						<form:input type="address.city" path="password" class="form-control" />
+						<form:input path="address.city" class="form-control" />
 					</div>
 				</div>
 				<div class="col-md-2">
@@ -101,7 +101,7 @@
 				<div class="col-md-4">
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1">State</span>
-						<form:input type="address.state" path="password" class="form-control" />
+						<form:input path="address.state" class="form-control" />
 					</div>
 				</div>
 				<div class="col-md-2">
