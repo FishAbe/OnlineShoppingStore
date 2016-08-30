@@ -13,12 +13,12 @@ public class OrderLine {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne
+    @OneToOne
     private Product product;
     private int quantity = 1;
     @Temporal(TemporalType.DATE)
     private Date deliveryDate;
-
+    
     public Long getId() {
 		return id;
 	}

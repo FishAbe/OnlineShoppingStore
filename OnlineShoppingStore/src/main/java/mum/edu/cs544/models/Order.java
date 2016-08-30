@@ -8,18 +8,18 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.*;
-
 import mum.edu.cs544.models.Address;
 import mum.edu.cs544.models.OrderLine;
 import mum.edu.cs544.models.Enum.OrderStatus;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
     @Embedded
     private Address shippingAddress;
 
@@ -27,10 +27,15 @@ public class Order {
     // private Date deliveryDate;
 
     private Double totalOrderPrice = null;
-
+    
+    @ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "customerId")
+	private Customer customer;
+    
+   
     @JoinColumn(name = "order_id")
-    @OneToMany(cascade = CascadeType.ALL /*orphanRemoval = true*/)
-    private List<OrderLine> orderLineItems = new ArrayList<OrderLine>(); // can be Final
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderLine> orderLineItems = new ArrayList<OrderLine>();
     
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
@@ -82,6 +87,15 @@ public class Order {
 	public Long getId() {
 		return id;
 	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
     
+	
     
 }

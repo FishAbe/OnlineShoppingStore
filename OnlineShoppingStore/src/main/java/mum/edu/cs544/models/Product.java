@@ -26,7 +26,7 @@ public abstract class Product {
     @NotEmpty(message = "Product names may not be empty")
     private String name;
 
-    @Lob @NotEmpty(message="Description may not be empty")
+   @NotEmpty(message="Description may not be empty")
     private String description;
 
     @DecimalMin(value = "0")
