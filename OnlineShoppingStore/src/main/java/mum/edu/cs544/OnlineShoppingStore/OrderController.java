@@ -5,14 +5,18 @@ package mum.edu.cs544.OnlineShoppingStore;
 
 import java.util.Set;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import mum.edu.cs544.models.Book;
+import mum.edu.cs544.models.Customer;
 import mum.edu.cs544.services.IBookService;
 import mum.edu.cs544.services.IOrderService;
 
@@ -39,9 +43,15 @@ public class OrderController {
 		
 		return "product/detail";
 	}
-	
-	public String addToCart(Book book){
-		return "product/carts";
+	@RequestMapping(value = "/product/detail/{id}", method = RequestMethod.POST)
+	public String updaddToCartate(@Valid Book book,@PathVariable int id, BindingResult result){
+		
+		if(result.hasErrors())
+			return "redirect:/product/detail/" + id;
+		//_customerService.updateCustomer(customer);
+		
+		return "redirect:/product/carts";
 	}
+	
 	
 }
