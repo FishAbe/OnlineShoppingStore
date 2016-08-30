@@ -17,9 +17,6 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="user/login">Login</a>
-                    </li>
-                    <li class="page-scroll">
                         <a href="/OnlineShoppingStore/spring/customer">Customer</a>
                     </li>
                      <li class="page-scroll">
