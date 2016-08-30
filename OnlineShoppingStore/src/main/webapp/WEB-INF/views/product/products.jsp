@@ -16,7 +16,9 @@
 		   </div>
 		   <div class="col-md-5">
 		    <div class="container button-wrapper">
-	          <button class="btn btn-success btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> <span class="items">1</span></button>
+	          
+             <a class="btn btn-success btn-lg"  href="/OnlineShoppingStore/spring/product/detail/1">
+								<span class="glyphicon glyphicon-shopping-cart"></span> <span class="items">1</span></a>
              </div> 
 		   </div>
 		   </div>
