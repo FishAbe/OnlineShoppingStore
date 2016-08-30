@@ -54,8 +54,6 @@ public class CustomerController {
 	
 	@RequestMapping(value = "/customer/add", method = RequestMethod.POST)
 	public String add(@Valid Customer customer, BindingResult result) {
-        customer.setUserName("fiseha");
-        
         customer.setAddress(customer.getAddress());
 		System.out.println(result.hasErrors());
 		
@@ -91,6 +89,13 @@ public class CustomerController {
 			return "redirect:/customer/update/" + id;
 		_customerService.updateCustomer(customer);
 		
+		return "redirect:/customer";
+	}
+	
+	@RequestMapping(value = "/customer/delete/{id}", method = RequestMethod.GET )
+	public String delete(@PathVariable int id){
+		
+		_customerService.removeCustomer(id);
 		return "redirect:/customer";
 	}
 

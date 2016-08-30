@@ -16,8 +16,6 @@
 			<a href="customer/add" class="btn btn-primary"> Add Customer</a>
 		</div>
 
-		<br />
-
 		<div class="table-responsive">
 			<table class="table table-striped table-condensed">
 				<thead>
@@ -41,7 +39,7 @@
 						
 								<a class="btn  btn-primary"  href="/OnlineShoppingStore/spring/customer/update/${customer.id}">
 								<span class="fa fa-save"></span> Update</a>
-								<a class="btn  btn-danger"  href="customer/delete/${customer.id}">
+								<a class="btn  btn-danger"  href="/OnlineShoppingStore/spring/customer/delete/${customer.id}">
 								<span class="fa fa-lg fa-times-circle"></span> Delete</a>
 						</td>
 					</tr>

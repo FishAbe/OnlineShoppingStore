@@ -23,8 +23,8 @@ public class Person {
     @Email(message="Invalid Email!")
 	private String email;
 	
-    @NotNull
-	private String userName;
+   
+	//private String userName;
 	
     @NotNull
 	private String password;
@@ -54,13 +54,7 @@ public Person(String email, String password){
 		return id;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+	
 
 	public String getPassword() {
 		return password;
