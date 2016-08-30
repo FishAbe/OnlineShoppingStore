@@ -4,8 +4,7 @@ package mum.edu.cs544.models;
  * @createdDate Aug 27, 2016
  */
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMax;
@@ -13,7 +12,6 @@ import javax.validation.constraints.DecimalMin;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import mum.edu.cs544.models.Enum.Status;
 

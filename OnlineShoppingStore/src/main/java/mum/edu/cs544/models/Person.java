@@ -23,7 +23,7 @@ public class Person {
     @Email(message="Invalid Email!")
 	private String email;
 	
-    @NotNull
+    //@NotNull
 	private String userName;
 	
     @NotNull

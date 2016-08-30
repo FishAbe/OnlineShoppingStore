@@ -6,17 +6,19 @@ package mum.edu.cs544.OnlineShoppingStore;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import mum.edu.cs544.models.Book;
-import mum.edu.cs544.models.Customer;
 import mum.edu.cs544.models.Enum.Genre;
+import mum.edu.cs544.models.Enum.Status;
 import mum.edu.cs544.services.IBookService;
 
 /**
@@ -24,9 +26,8 @@ import mum.edu.cs544.services.IBookService;
  * @createdDate Aug 29, 2016
  */
 @Controller
-@RequestMapping
 public class BookController {
-   IBookService bookService;
+   IBookService _bookService;
 	
    @RequestMapping("/book") //annotation is necesssary for default one too.
 	public String getAllBooks(Model model) {
@@ -61,21 +62,51 @@ public class BookController {
 		return "book/addBook";
 	}
    
+   
+   @RequestMapping(value = "/book/add", method = RequestMethod.POST)
+	public String add(@Valid Book book, BindingResult result) {
+       
+	   
+	   System.out.println(result.hasErrors());
+		
+		System.out.println("ErrorCount" + result.getErrorCount());
+		System.out.println(result.getAllErrors());
+		List<ObjectError> errors = result.getAllErrors();
+		for(ObjectError e: errors){
+			System.out.println(e.getDefaultMessage());
+		}
+		
+		
+		if(result.hasErrors())
+			return "book/addBook";
+		//System.out.println(customer.getBilingAddress().getCountry());
+		
+		   //Book book = new Book();
+		   book.setId(1);
+		   book.setIsbn("1001");
+		   book.setName("JAVA ");
+		   book.setGenre(Genre.TECHNOLOGY);
+		   book.setAuthor("Tarekegn");
+		   book.setPrice(150.00);
+		   book.setDescription("aaaaaaaaaa");
+		   book.setDiscount(23.67);
+		   book.setQuantity(5);
+		   book.setStatus(Status.New);
+		  
+		   System.out.println("Please work");
+		_bookService.add(book);
+	
+		System.out.println("Book added");
+		
+		return "redirect:/book";
+	}
+   
+   
     @RequestMapping(value="/{id}")
     public String getBookByTitle(@PathVariable("id") long id, Model model) {
-        model.addAttribute("book", bookService.findById(id));
-        return "book/show";
+        model.addAttribute("book", _bookService.findById(id));
+        return "book/booklist";
     }
     
-    @RequestMapping(value = "/create", method = RequestMethod.GET)
-    public String getAddBookForm(Model model, HttpServletRequest request) {
-        if(request.getSession().getAttribute("loggedInUser") == null) {
-            return "redirect:/login";
-        }
-        
-        Book newBook = new Book();
-        model.addAttribute("newBook", newBook);
-       
-        return "book/add";
-    }
+   
 }
