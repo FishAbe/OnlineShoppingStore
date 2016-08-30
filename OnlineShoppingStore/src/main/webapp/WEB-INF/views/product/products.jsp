@@ -10,7 +10,7 @@
         <h2>List of Available Products</h2>
 		<c:forEach begin="0" end="8" varStatus="loop">
 		 <div class="col-md-3 well" style="height=40px; margin: 2px; border-color: red;">
-		 <div><img src="/resources/images/book.png" class="img-rounded" alt="Cinque Terre" width="250" height="340"></div>
+		 <div><img src="resources/images/book.png" class="img-rounded" alt="product image" width="250" height="340"></div>
 		   <div class="col-md-6">
 		   $ 245
 		   </div>

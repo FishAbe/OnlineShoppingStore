@@ -55,10 +55,6 @@ public class CustomerController {
 	@RequestMapping(value = "/customer/add", method = RequestMethod.POST)
 	public String add(@Valid Customer customer, BindingResult result) {
         customer.setAddress(customer.getAddress());
-		System.out.println(result.hasErrors());
-		
-		System.out.println("ErrorCount" + result.getErrorCount());
-		System.out.println(result.getAllErrors());
 		List<ObjectError> errors = result.getAllErrors();
 		for(ObjectError e: errors){
 			System.out.println(e.getDefaultMessage());
@@ -69,10 +65,7 @@ public class CustomerController {
 			return "customer/addCustomer";
 		//System.out.println(customer.getBilingAddress().getCountry());
 		_customerService.addCustomer(customer);
-	
-		System.out.println("Customer added");
-		
-		return "redirect:/customer";
+		return "redirect:/spring/customer";
 	}
 	
 	@RequestMapping(value="/customer/update/{id}",method = RequestMethod.GET)
@@ -89,14 +82,14 @@ public class CustomerController {
 			return "redirect:/customer/update/" + id;
 		_customerService.updateCustomer(customer);
 		
-		return "redirect:/customer";
+		return "redirect:/spring/customer";
 	}
 	
 	@RequestMapping(value = "/customer/delete/{id}", method = RequestMethod.GET )
 	public String delete(@PathVariable int id){
 		
 		_customerService.removeCustomer(id);
-		return "redirect:/customer";
+		return "redirect:/spring/customer";
 	}
 
 }
