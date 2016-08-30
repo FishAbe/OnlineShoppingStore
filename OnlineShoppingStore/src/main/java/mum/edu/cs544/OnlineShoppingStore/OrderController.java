@@ -52,9 +52,9 @@ public class OrderController {
 	public String addToCart(@PathVariable int id){
 		
 		CartItem item = new CartItem();
-		item.setCustomerId(1);
-		item.setProductId(1);
-		item.setQuantity(1);
+		item.setCustomerId(2);
+		item.setProductId(10);
+		item.setQuantity(2);
 		item.setUnitPrice(20.5);
 		item.setSubtotal(item.getSubtotal());
 	    _cartService.addItem(item);
@@ -77,5 +77,6 @@ public class OrderController {
 		_cartService.remove(id);
 		return "redirect:/spring/product/carts";
 	}
+	
 	
 }

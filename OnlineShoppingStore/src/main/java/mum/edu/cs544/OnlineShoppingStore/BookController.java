@@ -67,8 +67,18 @@ public class BookController {
    
    
    @RequestMapping(value = "/book/add", method = RequestMethod.POST)
-	public String add(@Valid Book book, BindingResult result) {
+	public String add( Book book, BindingResult result) {
        
+	   book.setId(1);
+	   book.setIsbn("111-1234567890");
+	   book.setName("JAVA ");
+	   book.setGenre(Genre.TECHNOLOGY);
+	   book.setAuthor("Tarekegn");
+	   book.setPrice(150.00);
+	   book.setDescription("aaaaaaaaaa");
+	   book.setDiscount(23.67);
+	   book.setQuantity(5);
+	   book.setStatus(Status.New);
 	   
 	   System.out.println(result.hasErrors());
 		
@@ -85,16 +95,7 @@ public class BookController {
 		//System.out.println(customer.getBilingAddress().getCountry());
 		
 		   //Book book = new Book();
-		   book.setId(1);
-		   book.setIsbn("111-1234567890");
-		   book.setName("JAVA ");
-		   book.setGenre(Genre.TECHNOLOGY);
-		   book.setAuthor("Tarekegn");
-		   book.setPrice(150.00);
-		   book.setDescription("aaaaaaaaaa");
-		   book.setDiscount(23.67);
-		   book.setQuantity(5);
-		   book.setStatus(Status.New);
+		 
 		  
 		   System.out.println("Please work");
 		
