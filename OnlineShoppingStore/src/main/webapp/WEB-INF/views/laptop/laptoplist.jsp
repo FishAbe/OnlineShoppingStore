@@ -9,11 +9,11 @@
 
 <div class="container">
 		<div class="page-header ">
-			<h3>Book List</h3>
+			<h3>Laptop List</h3>
 		</div>
 
 		<div>
-			<a href="book/add" class="btn btn-primary"> Add Laptop</a>
+			<a href="laptop/add" class="btn btn-primary"> Add Laptop</a>
 		</div>
 
 		<br />
@@ -22,26 +22,26 @@
 			<table class="table table-striped table-condensed">
 				<thead>
 					<tr>
-						<th>isbn</th>
+						<th>serialNo</th>
 						<th>name</th>
-						<th>author</th>
-						<th>genre</th>
+						<th>type</th>
+						<th>status</th>
 					    <th>price</th>
 				
 					</tr>
 				</thead>
-				<c:forEach var="book" items="${bookList}">
+				<c:forEach var="laptop" items="${laptopList}">
 					<tr>
-						<td>${book.isbn}</td>
-						<td>${book.name}</td>
-						<td>${book.author}</td>
-					    <td>${book.genre}</td>
-						<td>${book.price}</td> 
+						<td>${laptop.serialNo}</td>
+						<td>${laptop.name}</td>
+						<td>${laptop.type}</td>
+					    <td>${laptop.status}</td>
+						<td>${laptop.price}</td> 
 						<td>
 						
-								<a class="btn  btn-primary"  href="book/update/${book.isbn}">
+								<a class="btn  btn-primary"  href="book/update/${laptop.serialNo}">
 								<span class="fa fa-save"></span> Update</a>
-								<a class="btn  btn-danger"  href="book/delete/${book.isbn}">
+								<a class="btn  btn-danger"  href="book/delete/${laptop.serialNo}">
 								<span class="fa fa-lg fa-times-circle"></span> Delete</a>
 								
 							

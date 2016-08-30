@@ -5,6 +5,7 @@ package mum.edu.cs544.OnlineShoppingStore;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -33,7 +34,7 @@ public class BookController {
 	public String getAllBooks(Model model) {
      //   model.addAttribute("books", bookService.getAll());
 	   
-	   Book book = new Book();
+	 /*  Book book = new Book();
 	   book.setId(1);
 	   book.setIsbn("1001");
 	   book.setName("JAVA ");
@@ -50,6 +51,8 @@ public class BookController {
 		List<Book> bookList = new ArrayList<>();
 		bookList.add(book);
 		bookList.add(book2);
+*/
+	   Set<Book> bookList= _bookService.getAll();
 		model.addAttribute("bookList", bookList);
 	   
         return "book/booklist";
@@ -83,7 +86,7 @@ public class BookController {
 		
 		   //Book book = new Book();
 		   book.setId(1);
-		   book.setIsbn("1001");
+		   book.setIsbn("111-1234567890");
 		   book.setName("JAVA ");
 		   book.setGenre(Genre.TECHNOLOGY);
 		   book.setAuthor("Tarekegn");
@@ -94,7 +97,8 @@ public class BookController {
 		   book.setStatus(Status.New);
 		  
 		   System.out.println("Please work");
-		_bookService.add(book);
+		
+		   _bookService.add(book);
 	
 		System.out.println("Book added");
 		

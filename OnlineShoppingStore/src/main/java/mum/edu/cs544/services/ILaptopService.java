@@ -1,6 +1,6 @@
 /**
  * 
- *//*
+ */
 package mum.edu.cs544.services;
 
 import java.util.Set;
@@ -8,10 +8,10 @@ import java.util.Set;
 import mum.edu.cs544.models.Laptop;
 import mum.edu.cs544.models.Product;
 
-*//**
+/**
  * @author Tarekegn
  * @createdDate Aug 27, 2016
- *//*
+ */
 public interface ILaptopService {
 	void add(Laptop laptop);
     void update(Laptop laptop);
@@ -27,4 +27,3 @@ public interface ILaptopService {
 
     Set<Laptop> getLaptopByCategory(long categoryId);
 }
-*/
