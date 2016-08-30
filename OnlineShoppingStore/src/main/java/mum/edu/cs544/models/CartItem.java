@@ -6,6 +6,8 @@ package mum.edu.cs544.models;
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 
+import org.springframework.data.annotation.Transient;
+
 /**
  * @author Fish
  *
@@ -23,6 +25,9 @@ public class CartItem {
 	private Double unitPrice;
 	
 	private int quantity;
+	
+	@Transient
+	private double subtotal;
 	
 	public CartItem(){
 		
@@ -64,6 +69,14 @@ public class CartItem {
 		return id;
 	}
 	
+	public double getSubtotal(){
+		return unitPrice * quantity;
+				
+	}
+
+	public void setSubtotal(double subtotal) {
+		this.subtotal = subtotal;
+	}
 	
 	
 	

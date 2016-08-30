@@ -1,8 +1,3 @@
-<%-- 
-    Document   : modal
-    Created on : May 17, 2016, 3:34:32 PM
-    Author     : tekeste
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@tag description="create tag modal" pageEncoding="UTF-8"%>

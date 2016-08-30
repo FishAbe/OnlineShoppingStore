@@ -11,12 +11,13 @@
 		<div class="page-header ">
 			<h3>Customer List</h3>
 		</div>
-
+       
 		<div>
-			<a href="customer/add" class="btn btn-primary"> Add Customer</a>
+			<a href="customer/add" class="btn btn-primary" > Add Customer</a>
+			 <br/>
 		</div>
-
-		<div class="table-responsive">
+          
+		<div class="table-responsive well" style= "border-color: #657979;">
 			<table class="table table-striped table-condensed">
 				<thead>
 					<tr>
@@ -40,7 +41,7 @@
 								<a class="btn  btn-primary"  href="/OnlineShoppingStore/spring/customer/update/${customer.id}">
 								<span class="fa fa-save"></span> Update</a>
 								<a class="btn  btn-danger"  href="/OnlineShoppingStore/spring/customer/delete/${customer.id}">
-								<span class="fa fa-lg fa-times-circle"></span> Delete</a>
+								<span class="glyphicon glyphicon-trash"></span></a>
 						</td>
 					</tr>
 				</c:forEach>

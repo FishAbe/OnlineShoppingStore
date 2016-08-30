@@ -26,7 +26,7 @@
                         <a href="/OnlineShoppingStore/spring/product">Products</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">About</a>
+                        <a href="/OnlineShoppingStore/spring/product/carts">Cart Items</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#contact">Contact</a>
@@ -43,7 +43,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="">
+                <br/>
+                    <!-- <img class="img-responsive" src="resource/images/book.png" alt=""> -->
                     <
                 </div>
             </div>

@@ -19,7 +19,7 @@
 <div>Price:-----------------------</div>
 <div>Quantity:-----------------------</div>
 <div>
-<a class="btn btn-success btn-lg"  href="/OnlineShoppingStore/spring/product/detail/1">
+<a class="btn btn-success btn-lg"  href="/OnlineShoppingStore/spring/product/addToCart/1">
 								<span class="glyphicon glyphicon-shopping-cart"></span> <span class="items">Add to Cart</span></a>
 <a class="btn btn-primary" href="/OnlineShoppingStore/spring/product">Back</a>
 </div>
