@@ -13,13 +13,13 @@
 </div>
 <div class="col-md-6" >
 <h2>Product Detail</h2>
-<div>Product Name:---------------------</div>
-<div>Book Title:------------------------</div>
-<div>Book Author:-----------------------</div>
-<div>Price:-----------------------</div>
-<div>Quantity:-----------------------</div>
+<div>Product Name:${product.name}</div>
+<div>Book Title:  ${product.name}</div>
+<div>Book Author:${product.author}</div>
+<div>Price:${product.price}</div>
+<div>Quantity:<input type="text" value=1></div>
 <div>
-<a class="btn btn-success btn-lg"  href="/OnlineShoppingStore/spring/product/addToCart/1">
+<a class="btn btn-success btn-lg"  href="/OnlineShoppingStore/spring/product/addToCart/${product.id}">
 								<span class="glyphicon glyphicon-shopping-cart"></span> <span class="items">Add to Cart</span></a>
 <a class="btn btn-primary" href="/OnlineShoppingStore/spring/product">Back</a>
 </div>

@@ -50,24 +50,25 @@ public class OrderController {
 	@RequestMapping(value = { "/product", "/Product" }, method = RequestMethod.GET)
 	public String products(Model model) {
 		Set<Book> books = _bookService.getAll();
-		// model.addAttribute("products", books);
+	    model.addAttribute("products", books);
 		return "product/products";
 	}
 
 	@RequestMapping(value = { "/product/detail/{id}" }, method = RequestMethod.GET)
 	public String productDetail(@PathVariable int id, Model model) {
-
+        Product prodct=_bookService.findById(id);
+        model.addAttribute("product", prodct);
 		return "product/detail";
 	}
 
 	@RequestMapping(value = "/product/addToCart/{id}", method = RequestMethod.GET)
 	public String addToCart(@PathVariable int id) {
-
+		 Book prodct=_bookService.findById(id);
 		CartItem item = new CartItem();
-		item.setCustomerId(2);
-		item.setProductId(10);
-		item.setQuantity(2);
-		item.setUnitPrice(20.5);
+		item.setCustomerId(1);
+		item.setProductId(prodct.getId());
+		item.setQuantity(1);
+		item.setUnitPrice(prodct.getPrice());
 		item.setSubtotal(item.getSubtotal());
 		_cartService.addItem(item);
 
