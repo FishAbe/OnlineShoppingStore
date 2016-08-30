@@ -38,8 +38,8 @@ public class LaptopController {
 	@RequestMapping(value = {"/laptop", "/Laptop"}, method = RequestMethod.GET)
 	public String index(Model model) {
       
-		Set<Laptop> customerList = _laptopService.getAll();
-		model.addAttribute("customerList", customerList);
+		Set<Laptop> laptopList = _laptopService.getAll();
+		model.addAttribute("laptopList", laptopList);
 
 		return "laptop/laptoplist";
 	}
@@ -66,7 +66,7 @@ public class LaptopController {
 		
 		
 		if(result.hasErrors())
-			return "customer/addCustomer";
+			return "laptop/addLaptop";
 		//System.out.println(customer.getBilingAddress().getCountry());
 		_laptopService.add(laptop);
 	

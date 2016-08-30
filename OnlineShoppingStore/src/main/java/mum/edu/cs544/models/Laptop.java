@@ -12,8 +12,7 @@ import mum.edu.cs544.models.Enum.Genre;
  * @createdDate Aug 27, 2016
  */
 @Entity
-//@PrimaryKeyJoinColumn(name="product_id")
-@DiscriminatorValue("ROLE_Laptop")
+@DiscriminatorValue("Laptop")
 public class Laptop extends Product {
 	
 	 private String serialNo;

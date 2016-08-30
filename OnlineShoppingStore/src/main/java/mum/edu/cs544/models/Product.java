@@ -16,7 +16,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 import mum.edu.cs544.models.Enum.Status;
 
 
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="product_type")
 @Entity
 public abstract class Product {
 
@@ -26,7 +27,9 @@ public abstract class Product {
     @NotEmpty(message = "Product names may not be empty")
     private String name;
 
-   @NotEmpty(message="Description may not be empty")
+
+    @NotEmpty(message="Description may not be empty")
+
     private String description;
 
     @DecimalMin(value = "0")

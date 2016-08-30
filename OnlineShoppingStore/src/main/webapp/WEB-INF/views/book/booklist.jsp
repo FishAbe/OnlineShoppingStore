@@ -39,9 +39,9 @@
 						<td>${book.price}</td> 
 						<td>
 						
-								<a class="btn  btn-primary"  href="book/update/${book.isbn}">
+								<a class="btn  btn-primary"  href="book/update/${book.id}">
 								<span class="fa fa-save"></span> Update</a>
-								<a class="btn  btn-danger"  href="book/delete/${book.isbn}">
+								<a class="btn  btn-danger"  href="book/delete/${book.id}">
 								<span class="fa fa-lg fa-times-circle"></span> Delete</a>
 								
 							
