@@ -9,6 +9,7 @@ import java.util.Set;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import mum.edu.cs544.models.Book;
+import mum.edu.cs544.models.Customer;
 import mum.edu.cs544.models.Enum.Genre;
 import mum.edu.cs544.models.Enum.Status;
 import mum.edu.cs544.services.IBookService;
@@ -28,6 +30,8 @@ import mum.edu.cs544.services.IBookService;
  */
 @Controller
 public class BookController {
+	
+   @Autowired
    IBookService _bookService;
 	
    @RequestMapping("/book") //annotation is necesssary for default one too.
@@ -82,21 +86,6 @@ public class BookController {
 		
 		if(result.hasErrors())
 			return "book/addBook";
-		//System.out.println(customer.getBilingAddress().getCountry());
-		
-		   //Book book = new Book();
-		   book.setId(1);
-		   book.setIsbn("111-1234567890");
-		   book.setName("JAVA ");
-		   book.setGenre(Genre.TECHNOLOGY);
-		   book.setAuthor("Tarekegn");
-		   book.setPrice(150.00);
-		   book.setDescription("aaaaaaaaaa");
-		   book.setDiscount(23.67);
-		   book.setQuantity(5);
-		   book.setStatus(Status.New);
-		  
-		   System.out.println("Please work");
 		
 		   _bookService.add(book);
 	
@@ -112,5 +101,30 @@ public class BookController {
         return "book/booklist";
     }
     
+    
+    @RequestMapping(value="/book/update/{id}",method = RequestMethod.GET)
+	public String update(@PathVariable int id,Model model){
+		Book book = _bookService.findById(id);
+		model.addAttribute("book",book);
+		return "book/updateBook";
+		
+	}
+	@RequestMapping(value = "/book/update/{id}", method = RequestMethod.POST)
+	public String update(@Valid Book book,@PathVariable int id, BindingResult result){
+		
+		if(result.hasErrors())
+			return "redirect:/book/update/" + id;
+		_bookService.update(book);
+		
+		return "redirect:/spring/book";
+	}
+	
+	@RequestMapping(value = "/book/delete/{id}", method = RequestMethod.GET )
+	public String delete(@PathVariable int id){
+		
+		_bookService.delete(id);
+		return "redirect:/spring/book";
+	}
+
    
 }

@@ -4,6 +4,7 @@
 package mum.edu.cs544.models;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -19,7 +20,7 @@ import mum.edu.cs544.models.Enum.Genre;
  * @createdDate Aug 27, 2016
  */
 @Entity
-@PrimaryKeyJoinColumn(name="product_id")
+@DiscriminatorValue("Book")
 public class Book extends Product {
 
     @NotEmpty(message = "ISBN may not be empty")

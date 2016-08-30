@@ -28,8 +28,7 @@ import mum.edu.cs544.services.IAdminService;
  * @createdDate Aug 27, 2016
  */
 @Service
-@Transactional(propagation = Propagation.REQUIRED)
-@Component
+@Transactional
 public class AdminService implements IAdminService {
     
 	private IAdminDAO _adminDao;

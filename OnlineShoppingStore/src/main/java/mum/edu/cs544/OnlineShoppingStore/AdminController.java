@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import mum.edu.cs544.models.Admin;
-import mum.edu.cs544.models.Customer;
 import mum.edu.cs544.services.IAdminService;
 
 

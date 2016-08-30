@@ -4,7 +4,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<t:mainLayout pageTitle="Books">
+<t:mainLayout pageTitle="Laptops">
     <jsp:body>
 
 <div class="container">

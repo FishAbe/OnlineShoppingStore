@@ -12,6 +12,7 @@ import mum.edu.cs544.models.Admin;
  * @author Fish
  *
  */
+
 public interface IAdminService {
 	
 	void addAdmin(Admin admin);
