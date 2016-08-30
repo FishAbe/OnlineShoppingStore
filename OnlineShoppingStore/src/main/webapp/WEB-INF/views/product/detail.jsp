@@ -8,7 +8,7 @@
     <jsp:body>
 <div class="container"style="width: 60%;margin: auto">
 <div class="row">
-<div class="col-md-4 well" style="height: 400px; border-color: red;">
+<div class="col-md-4 well" style="height: 400px; border-color: #657979;">
 <img src="resources/images/book.png" class="img-rounded" alt="product image" width="230" height="340">
 </div>
 <div class="col-md-6" >
