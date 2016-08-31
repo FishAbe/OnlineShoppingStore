@@ -51,7 +51,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/admin/add", method = RequestMethod.POST)
-	public String add(@ModelAttribute("adminForm") @Valid Admin admin, BindingResult result) {
+	public String add(@ModelAttribute("admin") @Valid Admin admin, BindingResult result) {
         
 		List<ObjectError> errors = result.getAllErrors();
 		for(ObjectError e: errors){

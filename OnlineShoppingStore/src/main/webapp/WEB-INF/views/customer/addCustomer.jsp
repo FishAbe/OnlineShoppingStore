@@ -15,6 +15,7 @@
 			action="/OnlineShoppingStore/spring/customer/add">
 			<br/>
 			<h3>Personal Info</h3>
+			 <form:errors path="*" cssClass="alert alert-danger" element="div"/>
 			<div class="row">
 				<div class="col-md-4">
 					<div class="input-group">
@@ -22,9 +23,7 @@
 						<form:input path="firstName" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="firstName" class="alert alert-danger" role="alert" />
-				</div>
+				
 				
 				<div class="col-md-4">
 					<div class="input-group">
@@ -32,9 +31,7 @@
 						<form:input path="lastName" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="lastName" class="alert alert-danger" role="alert" />
-				</div>
+				
 			</div>
 			<br/>
 			<div class="row">
@@ -45,9 +42,7 @@
 						<form:input path="email" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="email" class="alert alert-danger" role="alert" />
-				</div>
+				
 				
 				<div class="col-md-4">
 					<div class="input-group">
@@ -55,9 +50,7 @@
 						<form:input type="password" path="password" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="password" class="alert alert-danger" role="alert" />
-				</div>
+				
 			</div>
 			<br/>
 			<br/>
@@ -70,9 +63,7 @@
 						<form:input path="address.street" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="address.street" class="alert alert-danger" role="alert" />
-				</div>
+				
 				
 				<div class="col-md-4">
 					<div class="input-group">
@@ -80,9 +71,7 @@
 						<form:input path="address.city" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="address.city" class="alert alert-danger" role="alert" />
-				</div>
+				
 			</div>
 			<br />
 	       
@@ -94,9 +83,7 @@
 						<form:input path="address.zip" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="address.zip" class="alert alert-danger" role="alert" />
-				</div>
+				
 				
 				<div class="col-md-4">
 					<div class="input-group">
@@ -104,13 +91,11 @@
 						<form:input path="address.state" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="address.state" class="alert alert-danger" role="alert" />
-				</div>
+				
 			</div>
 			<br />
 			<div>
-				<input type="submit" value="Add" class="btn btn-primary" />
+				<input type="submit" value="Add Customer" class="btn btn-primary" />
 				<input type="reset" value="Reset" class="btn btn-reset" />
 			</div>
 			

@@ -15,7 +15,7 @@
 			action="/OnlineShoppingStore/spring/laptop/add">
 			<br/>
 			<h3>Laptop Information</h3>
-			
+			<form:errors path="*" cssClass="alert alert-danger" element="div"/>
 			<div class="row">
 				<div class="col-md-4">
 					<div class="input-group">
@@ -23,9 +23,7 @@
 						<form:input path="serialNo" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="serialNo" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 				<br/>
 				<div class="row">
@@ -35,9 +33,7 @@
 						<form:input path="name" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="name" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 			
 			<br/>
@@ -49,9 +45,7 @@
 						<form:input path="type" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="type" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 				<br/>
 				
@@ -62,9 +56,7 @@
 						<form:input path="price" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="price" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 				<br/>
 				<div class="row">
@@ -74,9 +66,7 @@
 						<form:textarea path="description" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="description" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 				
 				<br/>
@@ -87,9 +77,7 @@
 						<form:input path="status" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="status" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 				<br/>
 				
@@ -100,9 +88,7 @@
 						<form:input path="discount" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="discount" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 				<br/>
 				<div class="row">
@@ -112,9 +98,7 @@
 						<form:input path="quantity" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="quantity" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 				<br/>
 			</div>

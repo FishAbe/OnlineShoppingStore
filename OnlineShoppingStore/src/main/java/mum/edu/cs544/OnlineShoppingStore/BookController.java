@@ -37,25 +37,7 @@ public class BookController {
    @RequestMapping("/book") //annotation is necesssary for default one too.
 	public String getAllBooks(Model model) {
      //   model.addAttribute("books", bookService.getAll());
-	   
-	 /*  Book book = new Book();
-	   book.setId(1);
-	   book.setIsbn("1001");
-	   book.setName("JAVA ");
-	   book.setGenre(Genre.TECHNOLOGY);
-	   book.setAuthor("Tarekegn");
-	   book.setPrice(150.00);
-       Book book2 = new Book();
-       book2.setId(1);
-	   book2.setIsbn("1001");
-	   book2.setName("JAVA ");
-	   book2.setGenre(Genre.TECHNOLOGY);
-	   book2.setAuthor("Tarekegn");
-	   book2.setPrice(150.00);
-		List<Book> bookList = new ArrayList<>();
-		bookList.add(book);
-		bookList.add(book2);
-*/
+	  
 	   Set<Book> bookList= _bookService.getAll();
 		model.addAttribute("bookList", bookList);
 	   
@@ -66,13 +48,17 @@ public class BookController {
 	public String add(Model model) {
 		
 		model.addAttribute("book", new Book());
+		model.addAttribute("allGenres",Genre.values());
+		model.addAttribute("allStatus",Status.values());
 		return "book/addBook";
 	}
    
    
    @RequestMapping(value = "/book/add", method = RequestMethod.POST)
-	public String add( Book book, BindingResult result) {
+	public String add( @Valid Book book, BindingResult result,Model model) {
        
+		model.addAttribute("allGenres",Genre.values());
+		model.addAttribute("allStatus",Status.values());
 	   
 	   System.out.println(result.hasErrors());
 		
@@ -106,14 +92,20 @@ public class BookController {
 	public String update(@PathVariable int id,Model model){
 		Book book = _bookService.findById(id);
 		model.addAttribute("book",book);
+		
+		model.addAttribute("allGenres",Genre.values());
+		model.addAttribute("allStatus",Status.values());
 		return "book/updateBook";
 		
 	}
 	@RequestMapping(value = "/book/update/{id}", method = RequestMethod.POST)
-	public String update(@Valid Book book,@PathVariable int id, BindingResult result){
+	public String update( @Valid Book book,@PathVariable int id, BindingResult result, Model model){
+		
+		model.addAttribute("allGenres",Genre.values());
+		model.addAttribute("allStatus",Status.values());
 		
 		if(result.hasErrors())
-			return "redirect:/book/update/" + id;
+			return "book/update/" + id;
 		_bookService.update(book);
 		
 		return "redirect:/spring/book";
