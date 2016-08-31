@@ -4,7 +4,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<t:mainLayout pageTitle="Add Book">
+<t:mainLayout pageTitle="Add Laptop">
     <jsp:body>
 
 
@@ -14,7 +14,6 @@
 		<form:form modelAttribute="laptop"
 			action="/OnlineShoppingStore/spring/laptop/add">
 			<br/>
-			<h3>Laptop Information</h3>
 			<form:errors path="*" cssClass="alert alert-danger" element="div"/>
 			<div class="row">
 				<div class="col-md-4">
@@ -57,17 +56,7 @@
 					</div>
 				</div>
 				
-				</div>
-				<br/>
-				<div class="row">
-				<div class="col-md-4">
-					<div class="input-group">
-						<span class="input-group-addon" id="basic-addon1">Description</span>
-						<form:textarea path="description" class="form-control" />
-					</div>
-				</div>
-				
-				</div>
+				</div>				
 				
 				<br/>
 				<div class="row">
@@ -96,6 +85,16 @@
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1">Quantity</span>
 						<form:input path="quantity" class="form-control" />
+					</div>
+				</div>
+				
+				</div>
+				<br/>
+				<div class="row">
+				<div class="col-md-4">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1">Description</span>
+						<form:textarea path="description" class="form-control" />
 					</div>
 				</div>
 				

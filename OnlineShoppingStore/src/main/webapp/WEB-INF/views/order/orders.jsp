@@ -50,13 +50,13 @@
 						<td>${orderLine.product.name}</td>					
 						<td>${orderLine.product.price}</td>
 						<td>${orderLine.quantity}</td>
-					    <td>${order.totalOrderPrice}</td>
+					    <td>${orderLine.product.price}</td>
 					</tr>
 					
 				</c:forEach>
 				<tr>
 					<td colspan="3"></td>
-					<td  style="">Total :${order.totalOrderPrice}</td>
+					<td  style="color:red">Total : $ ${order.totalOrderPrice}</td>
 					<tr>
 			</table>
 		</div>

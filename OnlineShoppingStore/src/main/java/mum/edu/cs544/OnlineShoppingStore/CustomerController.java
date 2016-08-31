@@ -53,7 +53,7 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/customer/add", method = RequestMethod.POST)
-	public String add(@Valid Customer customer, BindingResult result) {
+	public String add(@Valid Customer customer, BindingResult result,Model mode) {
         customer.setAddress(customer.getAddress());
 		List<ObjectError> errors = result.getAllErrors();
 		for(ObjectError e: errors){
@@ -64,6 +64,7 @@ public class CustomerController {
 		if(result.hasErrors())
 			return "customer/addCustomer";
 		//System.out.println(customer.getBilingAddress().getCountry());
+		
 		_customerService.addCustomer(customer);
 		return "redirect:/spring/customer";
 	}

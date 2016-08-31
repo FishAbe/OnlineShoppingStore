@@ -114,7 +114,7 @@
 				<div class="col-md-4">
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1">Description</span>
-						<form:textarea path="description" placeholder="//Your Code Here" class="form-control" cols="100" rows="3" />
+						<form:textarea path="description"  class="form-control" cols="100" rows="3" />
 					</div>
 				</div>
 				

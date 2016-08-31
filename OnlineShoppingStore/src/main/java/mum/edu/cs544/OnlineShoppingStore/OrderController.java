@@ -5,27 +5,17 @@ package mum.edu.cs544.OnlineShoppingStore;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
-
-import javax.validation.Valid;
-
-import org.omg.CORBA._PolicyStub;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import mum.edu.cs544.models.Book;
 import mum.edu.cs544.models.CartItem;
-import mum.edu.cs544.models.Customer;
 import mum.edu.cs544.models.Laptop;
 import mum.edu.cs544.models.Order;
 import mum.edu.cs544.models.OrderLine;
@@ -105,6 +95,7 @@ public class OrderController {
 
 	@RequestMapping(value = { "/cart/checkout" }, method = RequestMethod.GET)
 	public String checkout(Model model) {
+		
 		Set<CartItem> cartItems = _cartService.getAllCartItem();
 		if (cartItems.size() > 0) {
 			Order order = new Order();
