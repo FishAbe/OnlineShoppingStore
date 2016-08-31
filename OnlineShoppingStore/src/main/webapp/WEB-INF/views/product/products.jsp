@@ -11,7 +11,7 @@
 		<%-- <c:forEach begin="0" end="8" varStatus="loop"> --%>
 		<c:forEach var="product" items="${products}">
 		 <div class="col-md-3 well" style="height=30px; margin: 2px; border-color: #657979;">
-		 <div><img src="resources/images/book.png" class="img-rounded" alt="product image" width="250" height="340"></div>
+		 <div><img src="resources/images/book.png" class="img-rounded" alt="product image" width="180" height="150"></div>
 		   <div class="col-md-12 well" style="border-color: #657979;">
 		    <B>Product Type :<strong style="color:blue">${product.genre}</strong> </B>
 		    <br/>
