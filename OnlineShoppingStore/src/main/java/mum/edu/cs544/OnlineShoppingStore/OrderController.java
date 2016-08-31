@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -119,7 +120,13 @@ public class OrderController {
 			}
 			return "redirect:/spring/product/carts";
 		}
-		return "redirect:/spring/product";
+		return "redirect:/spring/orders";
+	}
+	@RequestMapping(value = { "/orders" ,"Orders"}, method = RequestMethod.GET)
+	public String orders(Model model){
+		Set<Order> orders = _orderService.getAllOrders().stream().limit(3).collect(Collectors.toSet());
+		model.addAttribute("orders", orders);
+		return "order/orders";
 	}
 
 	private Product getProduct(long productId) {

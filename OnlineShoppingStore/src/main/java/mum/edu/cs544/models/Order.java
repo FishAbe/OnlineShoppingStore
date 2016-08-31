@@ -34,7 +34,7 @@ public class Order {
     
    
     @JoinColumn(name = "order_id")
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, orphanRemoval = true)
     private List<OrderLine> orderLineItems = new ArrayList<OrderLine>();
     
     @Enumerated(EnumType.STRING)
