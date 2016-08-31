@@ -21,10 +21,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import mum.edu.cs544.models.Book;
 import mum.edu.cs544.models.CartItem;
 import mum.edu.cs544.models.Customer;
+import mum.edu.cs544.models.Laptop;
 import mum.edu.cs544.models.Order;
 import mum.edu.cs544.models.OrderLine;
 import mum.edu.cs544.models.Product;
@@ -32,7 +34,9 @@ import mum.edu.cs544.models.Enum.OrderStatus;
 import mum.edu.cs544.services.IBookService;
 import mum.edu.cs544.services.ICartItemService;
 import mum.edu.cs544.services.ICustomerService;
+import mum.edu.cs544.services.ILaptopService;
 import mum.edu.cs544.services.IOrderService;
+import mum.edu.cs544.services.IProductService;
 
 /**
  * @author Fish
@@ -44,15 +48,21 @@ public class OrderController {
 	private IOrderService _orderService;
 	@Autowired
 	private IBookService _bookService;
+	@Autowired 
+	private ILaptopService _laptopService;
 	@Autowired
 	private ICartItemService _cartService;
 	@Autowired
 	private ICustomerService _customerService;
+	@Autowired
+	private IProductService _productService;
 
 	@RequestMapping(value = { "/product", "/Product" }, method = RequestMethod.GET)
 	public String products(Model model) {
 		Set<Book> books = _bookService.getAll();
+		Set<Laptop> laptops = _laptopService.getAll();
 	    model.addAttribute("products", books);
+	    model.addAttribute("laptops", laptops);
 		return "product/products";
 	}
 
@@ -64,8 +74,8 @@ public class OrderController {
 	}
 
 	@RequestMapping(value = "/product/addToCart/{id}", method = RequestMethod.GET)
-	public String addToCart(@PathVariable int id) {
-		 Book prodct=_bookService.findById(id);
+	public String addToCart(@PathVariable int id/*,@RequestParam("quantity") int quantity*/) {
+		 Product prodct=_productService.findById(id);
 		CartItem item = new CartItem();
 		item.setCustomerId(1);
 		item.setProductId(prodct.getId());
@@ -119,7 +129,7 @@ public class OrderController {
 			for (CartItem cartItem : cartItems) {
 				_cartService.remove(cartItem.getId());
 			}
-			
+			return "redirect:/spring/orders";
 		}
 		return "redirect:/spring/product/carts";
 		
@@ -133,7 +143,7 @@ public class OrderController {
 
 	private Product getProduct(long productId) {
 
-		return _bookService.findById(productId);
+		return _productService.findById(productId);
 	}
 
 }
