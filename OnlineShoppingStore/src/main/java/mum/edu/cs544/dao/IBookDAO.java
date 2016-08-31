@@ -14,6 +14,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import mum.edu.cs544.models.Book;
+import mum.edu.cs544.models.Product;
 
 
 /**
@@ -31,6 +32,13 @@ public interface IBookDAO extends CrudRepository<Book,Long> {
 	      Set<Book> findFirst6ByOrderByIdDesc();
 
 	      Set<Book> findFirst2ByOrderByDiscountDesc();
+
+		/**
+		 * @param p
+		 * @return
+		 */
+	   //   @Query("SELECT quantity FROM Book b ")
+		// int getProductCopiess(Product p);
 
 	     // Set<Book> findBookByCategory(Category category);
 }

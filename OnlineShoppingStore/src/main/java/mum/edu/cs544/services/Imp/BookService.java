@@ -61,6 +61,35 @@ public class BookService implements IBookService {
         _bookDao.findAll().forEach(item -> result.add(item));
         return result;
     }
+	/* (non-Javadoc)
+	 * @see mum.edu.cs544.services.IBookService#getLastest6Books()
+	 */
+	@Override
+	public Set<Book> getLastest6Books() {
+		// TODO Auto-generated method stub
+		return _bookDao.findFirst6ByOrderByIdDesc();
+	}
+	/* (non-Javadoc)
+	 * @see mum.edu.cs544.services.IBookService#get2SpecialDiscountedBook()
+	 */
+	@Override
+	public Set<Book> get2SpecialDiscountedBook() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	/* (non-Javadoc)
+	 * @see mum.edu.cs544.services.IBookService#getBookByCategory(long)
+	 */
+	
+	/* (non-Javadoc)
+	 * @see mum.edu.cs544.services.IBookService#getProductCopies(mum.edu.cs544.models.Product)
+	 */
+	@Override
+	public int getProductCopies(Product p) {
+		// TODO Auto-generated method stub
+	//	return _bookDao.getProductCopiess(p);
+		return 0;
+	}
 
 	
 
