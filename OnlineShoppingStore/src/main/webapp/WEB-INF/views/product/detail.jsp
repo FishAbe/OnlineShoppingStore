@@ -11,7 +11,7 @@
 <div class="col-md-4 well" style="height: 400px; border-color: #657979;">
 <img src="resources/images/book.png" class="img-rounded" alt="product image" width="230" height="340">
 </div>
-<div class="col-md-6" >
+<div class="col-md-6 well" style="margin-left: 20px" >
 <h2>Product Detail</h2>
 <div>Product Name:${product.name}</div>
 <div>Book Title:  ${product.name}</div>

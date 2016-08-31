@@ -21,11 +21,12 @@ import mum.edu.cs544.models.Enum.Genre;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+	
 	@RequestMapping("/login") //annotation is necesssary for default one too.
 	public String login(Model model) {
         Admin user=new Admin();
         model.addAttribute("currentUser", user);
-        return "user/login";
+        return "login";
     }
 
 }

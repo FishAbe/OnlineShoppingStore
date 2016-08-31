@@ -26,6 +26,9 @@
                         <a href="/OnlineShoppingStore/spring/product/carts">Cart Items</a>
                     </li>
                     <li class="page-scroll">
+                        <a href="/OnlineShoppingStore/spring/orders">Orders</a>
+                    </li>
+                    <li class="page-scroll">
                         <a href="#contact">Contact</a>
                     </li>
                 </ul>

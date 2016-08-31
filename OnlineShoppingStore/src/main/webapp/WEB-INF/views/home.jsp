@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page session="false" %>
 <html>
 <head>
@@ -25,7 +26,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Login</a>
+                        <a href='<spring:url value="user/login"></spring:url>'>Login</a>
                     </li>
                      <li class="page-scroll">
                         <a href="/OnlineShoppingStore/spring/customer">Customer</a>
