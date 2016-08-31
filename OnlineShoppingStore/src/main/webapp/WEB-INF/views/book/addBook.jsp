@@ -15,7 +15,7 @@
 			action="/OnlineShoppingStore/spring/book/add">
 			<br/>
 			<h3>Book Info</h3>
-			
+			 <form:errors path="*" cssClass="alert alert-danger" element="div"/>
 			<div class="row">
 				<div class="col-md-4">
 					<div class="input-group">
@@ -23,9 +23,7 @@
 						<form:input path="isbn" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="isbn" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 				<br/>
 				<div class="row">
@@ -35,9 +33,7 @@
 						<form:input path="name" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="name" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 			
 			<br/>
@@ -49,20 +45,19 @@
 						<form:input path="author" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="author" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 				<br/>
 				<div class="row">
 				<div class="col-md-4">
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1">Genre</span>
-						<form:input path="genre" class="form-control" />
+						 <form:select path="genre" id="genre-list" class="form-control">
+                                    <c:forEach var="genre" items="${allGenres}">
+                                        <form:option value="${genre}">${genre}</form:option>
+                                    </c:forEach>
+                                </form:select>
 					</div>
-				</div>
-				<div class="col-md-2">
-					<form:errors path="genre" class="alert alert-danger" role="alert" />
 				</div>
 				</div>
 				<br/>
@@ -73,34 +68,24 @@
 						<form:input path="price" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="price" class="alert alert-danger" role="alert" />
-				</div>
-				</div>
-				<br/>
-				<div class="row">
-				<div class="col-md-4">
-					<div class="input-group">
-						<span class="input-group-addon" id="basic-addon1">Description</span>
-						<form:textarea path="description" class="form-control" />
-					</div>
-				</div>
-				<div class="col-md-2">
-					<form:errors path="description" class="alert alert-danger" role="alert" />
-				</div>
-				</div>
 				
+				</div>
 				<br/>
+				
 				<div class="row">
 				<div class="col-md-4">
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1">Status</span>
-						<form:input path="status" class="form-control" />
+						
+						<form:select path="status" id="genre-list" class="form-control">
+                                    <c:forEach var="status" items="${allStatus}">
+                                        <form:option value="${status}">${status}</form:option>
+                                    </c:forEach>
+                                </form:select>
+						
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="status" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 				<br/>
 				
@@ -111,9 +96,7 @@
 						<form:input path="discount" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="discount" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 				<br/>
 				<div class="row">
@@ -123,11 +106,22 @@
 						<form:input path="quantity" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
-					<form:errors path="quantity" class="alert alert-danger" role="alert" />
-				</div>
+				
 				</div>
 				<br/>
+				
+				<div class="row">
+				<div class="col-md-4">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1">Description</span>
+						<form:textarea path="description" placeholder="//Your Code Here" class="form-control" cols="100" rows="3" />
+					</div>
+				</div>
+				
+				</div>
+				
+				<br/>
+				
 			</div>
 			<br/>
 			<br/>

@@ -13,7 +13,7 @@
 		</div>
 
 		<div>
-			<a href="book/add" class="btn btn-primary"> Add Laptop</a>
+			<a href="book/add" class="btn btn-primary"> Add Book</a>
 		</div>
 
 		<br />

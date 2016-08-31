@@ -12,6 +12,7 @@
 			action="/OnlineShoppingStore/spring/customer/update/${customer.id}" method="post">
 			<br/>
 			<h3>Personal Info</h3>
+			<form:errors path="*" cssClass="alert alert-danger" element="div"/>
 			<div class="row">
 				<div class="col-md-4">
 					<div class="input-group">

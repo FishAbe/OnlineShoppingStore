@@ -35,7 +35,7 @@ public class Book extends Product {
     public void setAuthor(String author) {
         this.author = author;
     }
-
+    @NotEmpty(message = "Author may not be empty")
     private String author;
 
     @Enumerated(EnumType.STRING)
