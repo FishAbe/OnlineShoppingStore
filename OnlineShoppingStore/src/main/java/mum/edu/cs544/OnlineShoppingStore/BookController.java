@@ -34,7 +34,7 @@ public class BookController {
    @Autowired
    IBookService _bookService;
 	
-   @RequestMapping("/book") //annotation is necesssary for default one too.
+   @RequestMapping(value={"/book","/spring/book"}) //annotation is necesssary for default one too.
 	public String getAllBooks(Model model) {
      //   model.addAttribute("books", bookService.getAll());
 	  
