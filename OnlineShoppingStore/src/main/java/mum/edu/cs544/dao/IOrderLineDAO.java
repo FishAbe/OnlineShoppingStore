@@ -15,5 +15,6 @@ import mum.edu.cs544.models.OrderLine;
  */
 @Repository
 public interface IOrderLineDAO extends CrudRepository <OrderLine,Long> {
+	
 
 }

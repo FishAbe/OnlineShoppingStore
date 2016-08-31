@@ -64,5 +64,14 @@ public class OrderService implements IOrderService{
 			return _orderDao.findFirst3ByOrderByIdDesc();
 		}
 
+		@Override
+		public Set<Order> getOrderByCustomer(long id) {
+			Set<Order> result = new HashSet<>();
+			_orderDao.getOrderByCustomer(id).forEach(item -> result.add(item)); 
+			// @formatter:on
+
+			return result;
+		}
+
 		
 }

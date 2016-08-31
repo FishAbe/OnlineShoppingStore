@@ -14,4 +14,5 @@ public interface IOrderService {
 	    Order findById(long id);
 	    Set<Order> getAllOrders();
 	    Set<Order>getTopThree();
+	    Set<Order> getOrderByCustomer(long id);
 }

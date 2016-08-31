@@ -18,31 +18,34 @@
 
 		<br />
 
-		<div class="table-responsive">
+		<div class="table-responsive well" style= "border-color: #657979;">
 			<table class="table table-striped table-condensed">
 				<thead>
-					<tr>
+					<tr>					
+						<th>Name</th>
+						<th>Type</th>
 						<th>serialNo</th>
-						<th>name</th>
-						<th>type</th>
+						<th>price</th>						
 						<th>status</th>
-					    <th>price</th>
+					    
 				
 					</tr>
 				</thead>
 				<c:forEach var="laptop" items="${laptopList}">
 					<tr>
-						<td>${laptop.serialNo}</td>
+						
 						<td>${laptop.name}</td>
 						<td>${laptop.type}</td>
+						<td>${laptop.serialNo}</td>	
+						<td>${laptop.price}</td> 					
 					    <td>${laptop.status}</td>
-						<td>${laptop.price}</td> 
+						
 						<td>
 						
-								<a class="btn  btn-primary"  href="book/update/${laptop.serialNo}">
+								<a class="btn  btn-primary"  href="laptop/update/${laptop.id}">
 								<span class="fa fa-save"></span> Update</a>
-								<a class="btn  btn-danger"  href="book/delete/${laptop.serialNo}">
-								<span class="fa fa-lg fa-times-circle"></span> Delete</a>
+								<a class="btn  btn-danger"  href="laptop/delete/${laptop.id}">
+								<span class="glyphicon glyphicon-trash"></span></a>
 								
 							
 						</td>

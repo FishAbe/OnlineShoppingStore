@@ -28,13 +28,7 @@
                     <li class="page-scroll">
                         <a href='<spring:url value="user/login"></spring:url>'>Login</a>
                     </li>
-                     <li class="page-scroll">
-                        <a href="/OnlineShoppingStore/spring/customer">Customer</a>
-                    </li>
-                     <li class="page-scroll">
-                        <a href="/OnlineShoppingStore/spring/product">Product</a>
-                    </li>
-                    <li class="page-scroll">
+                    <li>
                         <a href="#about">About</a>
                     </li>
                     <li class="page-scroll">

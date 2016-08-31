@@ -10,6 +10,7 @@ import java.util.Set;
 
 import javax.validation.Valid;
 
+import org.apache.commons.io.output.ThresholdingOutputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +21,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import mum.edu.cs544.models.Customer;
+import mum.edu.cs544.models.Order;
 import mum.edu.cs544.services.ICustomerService;
+import mum.edu.cs544.services.IOrderService;
 
 
 /**
@@ -33,6 +36,8 @@ public class CustomerController {
 	
 	@Autowired
 	private ICustomerService _customerService;
+	@Autowired
+	private IOrderService _orderService;
 	
 
 	@RequestMapping(value = {"/customer", "/Customer"}, method = RequestMethod.GET)
@@ -84,6 +89,19 @@ public class CustomerController {
 		_customerService.updateCustomer(customer);
 		
 		return "redirect:/spring/customer";
+	}
+		
+  @RequestMapping(value = { "/customer/orders"}, method = RequestMethod.GET)
+		public String orderHistory(Model model){
+	  /**
+	   * TODO :current customer should be fetched from the logged in session
+	   */
+	  
+	    Customer customer = _customerService.findById(1);
+			List<Order> orders = customer.getOrder();
+			model.addAttribute("orders", orders);
+			return "customer/orders";
+		
 	}
 	
 	@RequestMapping(value = "/customer/delete/{id}", method = RequestMethod.GET )

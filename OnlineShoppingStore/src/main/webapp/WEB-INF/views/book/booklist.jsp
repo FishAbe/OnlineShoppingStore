@@ -18,15 +18,15 @@
 
 		<br />
 
-		<div class="table-responsive">
+		<div class="table-responsive well" style= "border-color: #657979;">
 			<table class="table table-striped table-condensed">
 				<thead>
 					<tr>
-						<th>isbn</th>
-						<th>name</th>
-						<th>author</th>
-						<th>genre</th>
-					    <th>price</th>
+						<th>ISBN</th>
+						<th>Title</th>
+						<th>Author</th>
+						<th>Genre</th>
+					    <th>Price</th>
 				
 					</tr>
 				</thead>
@@ -42,7 +42,7 @@
 								<a class="btn  btn-primary"  href="book/update/${book.id}">
 								<span class="fa fa-save"></span> Update</a>
 								<a class="btn  btn-danger"  href="book/delete/${book.id}">
-								<span class="fa fa-lg fa-times-circle"></span> Delete</a>
+								<span class="glyphicon glyphicon-trash"></span></a>
 								
 							
 						</td>
