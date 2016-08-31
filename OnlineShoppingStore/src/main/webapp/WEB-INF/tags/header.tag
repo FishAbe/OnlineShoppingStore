@@ -21,6 +21,15 @@
                     </li>
                      <li class="page-scroll">
                         <a href="/OnlineShoppingStore/spring/product">Products</a>
+                         
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/OnlineShoppingStore/spring/book">Books</a>
+                         
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/OnlineShoppingStore/spring/laptop">Laptops</a>
+                         
                     </li>
                     <li class="page-scroll">
                         <a href="/OnlineShoppingStore/spring/product/carts">Cart Items</a>

@@ -91,7 +91,7 @@ public class BookController {
 	
 		System.out.println("Book added");
 		
-		return "redirect:/book";
+		return "redirect:/spring/book";
 	}
    
    

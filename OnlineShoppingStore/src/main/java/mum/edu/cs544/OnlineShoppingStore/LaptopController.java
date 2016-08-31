@@ -72,7 +72,7 @@ public class LaptopController {
 	
 		System.out.println("Laptop information added");
 		
-		return "redirect:/laptop";
+		return "redirect:/spring/laptop";
 	}
 	
 
