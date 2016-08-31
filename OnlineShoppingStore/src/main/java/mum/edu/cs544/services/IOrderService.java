@@ -13,4 +13,5 @@ public interface IOrderService {
 	    void deleteOrder(long id);
 	    Order findById(long id);
 	    Set<Order> getAllOrders();
+	    Set<Order>getTopThree();
 }

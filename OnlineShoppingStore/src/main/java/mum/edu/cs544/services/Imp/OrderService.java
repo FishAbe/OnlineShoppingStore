@@ -59,5 +59,10 @@ public class OrderService implements IOrderService{
 	        return result;
 	    }
 
+		@Override
+		public Set<Order> getTopThree() {
+			return _orderDao.findFirst3ByOrderByIdDesc();
+		}
+
 		
 }

@@ -3,7 +3,7 @@
  */
 package mum.edu.cs544.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Set;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +15,7 @@ import mum.edu.cs544.models.Order;
  */
 @Repository
 public interface IOrderDAO extends CrudRepository<Order,Long> {
+	 Set<Order> findFirst3ByOrderByIdDesc();
 
 	
 }

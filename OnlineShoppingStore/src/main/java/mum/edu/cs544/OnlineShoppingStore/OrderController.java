@@ -5,6 +5,7 @@ package mum.edu.cs544.OnlineShoppingStore;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -118,13 +119,14 @@ public class OrderController {
 			for (CartItem cartItem : cartItems) {
 				_cartService.remove(cartItem.getId());
 			}
-			return "redirect:/spring/product/carts";
+			
 		}
-		return "redirect:/spring/orders";
+		return "redirect:/spring/product/carts";
+		
 	}
 	@RequestMapping(value = { "/orders" ,"Orders"}, method = RequestMethod.GET)
 	public String orders(Model model){
-		Set<Order> orders = _orderService.getAllOrders().stream().limit(3).collect(Collectors.toSet());
+		Set<Order> orders = _orderService.getTopThree();
 		model.addAttribute("orders", orders);
 		return "order/orders";
 	}

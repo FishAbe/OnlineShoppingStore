@@ -16,29 +16,19 @@
 							
 		<div class="control-group form-horizontal well" style="border-color: #657979;">
      <div class="row">
-         <div class="span4">
-         <div class="control-group">
+         
+         <div class="control-group" style="font-family: sans-serif;">
              <div class="control-label">
-                Customer Name:
+                <strong>Customer Name:</strong> ${order.customer.firstName}  ${order.customer.lastName}
              </div>
-             <div class="controls">
-                ${order.customer.firstName}
+             <div class="control-label">
+                   <strong>Order Status : </strong> ${order.orderStatus}
              </div>
-
-         </div>
-     </div>
-         <div class="span6">
-             <div class="control-group">
-                 <div class="control-label">
-                    Order Status :
-                 </div>
-                 <div class="controls">
-                     New
-                 </div>
-
+              <div class="control-label">
+                    <strong>Order Date :</strong> ${order.orderDate}
              </div>
          </div>
-     
+                
      </div>
      </div>
      <strong>Order details</strong>
@@ -62,7 +52,12 @@
 						<td>${orderLine.quantity}</td>
 					    <td>${order.totalOrderPrice}</td>
 					</tr>
+					
 				</c:forEach>
+				<tr>
+					<td colspan="3"></td>
+					<td  style="">Total :${order.totalOrderPrice}</td>
+					<tr>
 			</table>
 		</div>
 		<hr/>
