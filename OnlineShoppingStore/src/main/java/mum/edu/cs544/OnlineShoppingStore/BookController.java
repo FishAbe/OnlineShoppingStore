@@ -71,7 +71,7 @@ public class BookController {
    
    
    @RequestMapping(value = "/book/add", method = RequestMethod.POST)
-	public String add(@Valid Book book, BindingResult result) {
+	public String add( Book book, BindingResult result) {
        
 	   
 	   System.out.println(result.hasErrors());
@@ -85,7 +85,7 @@ public class BookController {
 		
 		
 		if(result.hasErrors())
-			return "book/addBook";
+			return "book/addBook";		 
 		
 		   _bookService.add(book);
 	
