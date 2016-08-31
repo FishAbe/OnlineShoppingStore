@@ -38,7 +38,7 @@
                         <a href="/OnlineShoppingStore/spring/orders">Orders</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact">Contact</a>
+                        <a href="/OnlineShoppingStore/spring/customer/orders">Order History</a>
                     </li>
                 </ul>
             </div>
