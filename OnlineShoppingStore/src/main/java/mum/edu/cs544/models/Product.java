@@ -10,6 +10,7 @@ import javax.persistence.*;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 
@@ -23,12 +24,13 @@ public abstract class Product {
 
     @Id @GeneratedValue
     private long id;
-
-    @NotEmpty(message = "Product names may not be empty")
+    
+   
+    @NotBlank(message = "Product names may not be empty")
     private String name;
 
 
-    @NotEmpty(message="Description may not be empty")
+    @NotBlank(message="Description may not be empty")
 
     private String description;
 

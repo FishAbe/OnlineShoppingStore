@@ -5,6 +5,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="role")
@@ -14,12 +15,13 @@ public class Person {
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-    @NotNull(message="First Name is Required")
+    @NotBlank(message="First Name is Required")
 	private String firstName;
 	
-    @NotNull(message="First Name is Required")
+    @NotBlank(message="Last Name is Required")
 	private String lastName;
 	
+    @NotBlank(message="Email is Required")
     @Email(message="Invalid Email!")
 	private String email;
 	
@@ -28,7 +30,7 @@ public class Person {
 	//private String userName;
 
 	
-    @NotNull
+    @NotBlank(message="Password is Required")
 	private String password;
     
     private Address address;

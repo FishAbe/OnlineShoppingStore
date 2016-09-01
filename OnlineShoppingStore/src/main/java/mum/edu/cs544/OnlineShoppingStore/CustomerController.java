@@ -59,8 +59,11 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/customer/add", method = RequestMethod.POST)
-	public String add(@ModelAttribute ("customer")@Valid Customer customer, BindingResult result,Model mode) {
-        customer.setAddress(customer.getAddress());
+
+	public String add(@ModelAttribute("customer")@Valid Customer customer, BindingResult result,Model mode) {
+      
+		customer.setAddress(customer.getAddress());
+
 		List<ObjectError> errors = result.getAllErrors();
 		for(ObjectError e: errors){
 			System.out.println(e.getDefaultMessage());
