@@ -36,7 +36,8 @@
 				
 			</table>
 		</div>
-		<div>	
+		<div>
+			
 <a class="btn btn-primary" href="/OnlineShoppingStore/spring/cart/checkout">Check Out</a>
 <a class="btn btn-success" href="/OnlineShoppingStore/spring/product">Continue Shopping</a>
 
