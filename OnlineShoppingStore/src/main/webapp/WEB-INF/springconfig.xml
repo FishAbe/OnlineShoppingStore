@@ -33,7 +33,7 @@
       <form-login 
  		 login-page="/spring/user/login" 
 				login-processing-url="/postLogin"
-				username-parameter="username" 
+				username-parameter="email" 
 				password-parameter="password"
  			    default-target-url="/spring/product"    
                always-use-default-target="true"   
@@ -47,25 +47,40 @@
         <authentication-provider>
             <password-encoder hash="plaintext" />
             <user-service>
-                <user name="tare" password="123" authorities=" ROLE_ADMIN" />
+                <user name="tare" password="123" authorities="ROLE_USER, ROLE_ADMIN" />
                 <user name="fish" password="123" authorities="ROLE_USER" />
             </user-service>
         </authentication-provider>
     </authentication-manager>
-
-<!--    <authentication-manager>
+   <!-- 
+    <authentication-manager>
         <authentication-provider>
             <password-encoder hash="bcrypt" />
             <jdbc-user-service data-source-ref="dataSource" />   
         </authentication-provider>
     </authentication-manager>
+ 
+   
+   
+	<authentication-manager>
+	  <authentication-provider>
+	   
+		<jdbc-user-service data-source-ref="dataSource"
+		  users-by-username-query=
+		    "select email,password from user where email=?"
+		  authorities-by-username-query=
+		    "select email, role from user where email =?  " />
+	  </authentication-provider>
+	</authentication-manager>
+  --> 
+   
     
     <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <beans:property name="url" value="jdbc:mysql://localhost/cs544"/>
+        <beans:property name="url" value="jdbc:mysql://localhost/onlineshopping"/>
         <beans:property name="username" value="root"/>
-        <beans:property name="password" value=""/>
-    </beans:bean>-->
-    
+        <beans:property name="password" value="tarekegn"/>
+    </beans:bean>
+   
 
 </beans:beans>

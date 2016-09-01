@@ -61,15 +61,13 @@
 			  	<div class="panel-body">
 			  	<c:if test="${not empty error}">
 					<div class="alert alert-danger">
-					<!--  	<spring:message code="AbstractUserDetailsAuthenticationProvider.badCredentials"/><br />
-					-->
-					Invalid Username or Password
+					  	<spring:message code="AbstractUserDetailsAuthenticationProvider.badCredentials"/><br />
 					</div>
 				</c:if>
 			    	<form action="<spring:url value="/postLogin"></spring:url>" method="post">
                     <fieldset>
 			    	  	<div class="form-group">
-			    		    <input class="form:input-large" placeholder="User Name" name='username' type="text">
+			    		    <input class="form:input-large" placeholder="User Name" name='email' type="text">
 			    		</div>
 			    		<div class="form-group">
 			    			<input class=" form:input-large" placeholder="Password" name='password'  type="password" value="">
