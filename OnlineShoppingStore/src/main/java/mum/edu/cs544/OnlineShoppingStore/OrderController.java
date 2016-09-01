@@ -67,7 +67,7 @@ public class OrderController {
 	public String addToCart(@PathVariable int id/*,@RequestParam("quantity") int quantity*/) {
 		 Product prodct=_productService.findById(id);
 		CartItem item = new CartItem();
-		item.setCustomerId(1);
+		item.setCustomerId(14);
 		item.setProductId(prodct.getId());
 		item.setQuantity(1);
 		item.setUnitPrice(prodct.getPrice());
