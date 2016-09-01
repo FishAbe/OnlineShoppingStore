@@ -57,6 +57,7 @@ public class EmailSenderAdvice {
 
 	            sb.append(item.getDeliveryDate());
 	            sb.append("\n");
+	            System.out.println(item);
 	        }
 	        message.setText("Thankyou for shopping   " + "\n\n" +
 	                "Your Order Details are  : \n" + sb + "\n\n" +

@@ -120,7 +120,7 @@ public class OrderController {
 			for (CartItem cartItem : cartItems) {
 				_cartService.remove(cartItem.getId());
 			}
-			return "redirect:/spring/orders";
+			return "redirect:/spring/customer/orders";
 		}
 		return "redirect:/spring/product/carts";
 		
