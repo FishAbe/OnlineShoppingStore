@@ -61,7 +61,9 @@
 			  	<div class="panel-body">
 			  	<c:if test="${not empty error}">
 					<div class="alert alert-danger">
-						<spring:message code="AbstractUserDetailsAuthenticationProvider.badCredentials"/><br />
+					<!--  	<spring:message code="AbstractUserDetailsAuthenticationProvider.badCredentials"/><br />
+					-->
+					Invalid Username or Password
 					</div>
 				</c:if>
 			    	<form action="<spring:url value="/postLogin"></spring:url>" method="post">

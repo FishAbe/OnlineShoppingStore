@@ -16,14 +16,21 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="/OnlineShoppingStore/spring/customer">Customer</a>
-                    </li>
+                    
                      <li class="page-scroll">
                         <a href="/OnlineShoppingStore/spring/product">Products</a>
                          
                     </li>
+                   
                     <li class="page-scroll">
+                        <a href="/OnlineShoppingStore/spring/product/carts">Cart Items</a>
+                    </li>
+                   
+                    <li class="page-scroll">
+                        <a href="/OnlineShoppingStore/spring/customer/orders">Order History</a>
+                    </li>
+                    
+                     <li class="page-scroll">
                         <a href="/OnlineShoppingStore/spring/book">Books</a>
                          
                     </li>
@@ -31,17 +38,15 @@
                         <a href="/OnlineShoppingStore/spring/laptop">Laptops</a>
                          
                     </li>
+                     <li class="page-scroll">
+                        <a href="/OnlineShoppingStore/spring/orders">All Orders</a>
+                    </li>
+                    
                     <li class="page-scroll">
-                        <a href="/OnlineShoppingStore/spring/product/carts">Cart Items</a>
+                        <a href="/OnlineShoppingStore/spring/customer">Customer</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="/OnlineShoppingStore/spring/orders">Orders</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="/OnlineShoppingStore/spring/customer/orders">Order History</a>
-                    </li>
-                    <li class="page-scroll">
-                       <a href="/OnlineShoppingStore/spring/user/logout">Logout</a>	
+                       <a href="/OnlineShoppingStore/spring/user/logout" > Logout</a>
                     </li>
                     
                 </ul>

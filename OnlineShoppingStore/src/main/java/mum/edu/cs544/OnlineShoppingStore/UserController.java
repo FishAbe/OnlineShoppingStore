@@ -39,5 +39,10 @@ public class UserController {
 	public String logout(Model model) {
  		return "redirect:/spring/";
  	}
+	
+	@RequestMapping(value="/accessdenied", method = RequestMethod.GET)
+	public String accessDenied(Model model) {
+ 		return "accessdenied";
+ 	}
 
 }

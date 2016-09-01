@@ -12,18 +12,23 @@
     <!-- needed for security tag lib -->
     <beans:bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" /> 
     
-    <http pattern="/index.jsp" security="none" />
+    <http pattern="/spring/customer/add" security="none" />
      <http pattern="/spring/" security="none" />
       <http pattern="/spring/user/login" security="none" />  
-    <http  auto-config="true" > <!-- access-denied-page="/spring_security_login" -->
-        <intercept-url pattern="/**" method="POST" access="ROLE_ADMIN" />
-        
-      
+    <http  auto-config="true"  access-denied-page="/spring/user/accessdenied"> <!-- access-denied-page="/spring_security_login" -->
+         <intercept-url pattern="/spring/book**"  access="ROLE_ADMIN" />
+         <intercept-url pattern="/spring/laptop**"  access="ROLE_ADMIN" />
+          <intercept-url pattern="/spring/orders" access="ROLE_ADMIN" />
+          <intercept-url pattern="/spring/admin**"  access="ROLE_ADMIN" />
+          <intercept-url pattern="/spring/customer**" access="ROLE_ADMIN" />
+        <intercept-url pattern="/spring/product**" access="ROLE_USER" />
+         <intercept-url pattern="/spring/customer/orders" access="ROLE_USER" />
+          <intercept-url pattern="/spring/customer/add" access="ROLE_USER" />
+          <intercept-url pattern="/**" method="POST" access="IS_AUTHENTICATED_ANONYMOUSLY" /> 
         <intercept-url pattern="/spring/user/login" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
         <intercept-url pattern="/loginfailed" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
  
-         <intercept-url pattern="/product/**" access="ROLE_USER" />
-         <intercept-url pattern="/customer/orders" access="ROLE_USER" />
+         
    
       <form-login 
  		 login-page="/spring/user/login" 
@@ -34,8 +39,7 @@
                always-use-default-target="true"   
                authentication-failure-url="/spring/user/loginfailed"/>
 
-         <logout logout-success-url="/user/logout" 
-          delete-cookies="JSESSIONID" logout-url= "/doLogout"/> 
+         <logout logout-success-url="/spring/" />
  
     </http>
     
@@ -43,7 +47,7 @@
         <authentication-provider>
             <password-encoder hash="plaintext" />
             <user-service>
-                <user name="tare" password="123" authorities="ROLE_USER, ROLE_ADMIN" />
+                <user name="tare" password="123" authorities=" ROLE_ADMIN" />
                 <user name="fish" password="123" authorities="ROLE_USER" />
             </user-service>
         </authentication-provider>
