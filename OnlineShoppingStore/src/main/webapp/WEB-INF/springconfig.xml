@@ -13,18 +13,30 @@
     <beans:bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" /> 
     
     <http pattern="/index.jsp" security="none" />
-    
+     <http pattern="/spring/" security="none" />
+      <http pattern="/spring/user/login" security="none" />  
     <http  auto-config="true" > <!-- access-denied-page="/spring_security_login" -->
         <intercept-url pattern="/**" method="POST" access="ROLE_ADMIN" />
-        <intercept-url pattern="/book/add" method="GET" access="ROLE_ADMIN" />
-        <intercept-url pattern="/login.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        
+      
+        <intercept-url pattern="/spring/user/login" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
         <intercept-url pattern="/loginfailed" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-       <intercept-url pattern="/**" access="ROLE_USER" method="GET" /> 
+ 
          <intercept-url pattern="/product/**" access="ROLE_USER" />
          <intercept-url pattern="/customer/orders" access="ROLE_USER" />
-       <!--  <form-login login-page="/spring/book" authentication-failure-url="/loginfailed.jsp" 
-                    default-target-url="/"/>   -->
-        <logout logout-success-url="/"/>
+   
+      <form-login 
+ 		 login-page="/spring/user/login" 
+				login-processing-url="/postLogin"
+				username-parameter="username" 
+				password-parameter="password"
+ 			    default-target-url="/spring/product"    
+               always-use-default-target="true"   
+               authentication-failure-url="/spring/user/loginfailed"/>
+
+         <logout logout-success-url="/user/logout" 
+          delete-cookies="JSESSIONID" logout-url= "/doLogout"/> 
+ 
     </http>
     
     <authentication-manager>

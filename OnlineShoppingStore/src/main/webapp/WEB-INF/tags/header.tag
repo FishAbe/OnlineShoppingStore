@@ -41,7 +41,7 @@
                         <a href="/OnlineShoppingStore/spring/customer/orders">Order History</a>
                     </li>
                     <li class="page-scroll">
-                        <a href=" <c:url value='/j_spring_security_logout' />  ">Logout</a>
+                       <a href="/OnlineShoppingStore/spring/user/logout">Logout</a>	
                     </li>
                     
                 </ul>
