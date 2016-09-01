@@ -12,10 +12,10 @@
 			<h3>Customer List</h3>
 		</div>
        
-		<div>
+		<!-- <div>
 			<a href="customer/add" class="btn btn-primary" > Add Customer</a>
 			 <br/>
-		</div>
+		</div> --> -->
           
 		<div class="table-responsive well" style= "border-color: #657979;">
 			<table class="table table-striped table-condensed">
