@@ -40,6 +40,10 @@
                     <li class="page-scroll">
                         <a href="/OnlineShoppingStore/spring/customer/orders">Order History</a>
                     </li>
+                    <li class="page-scroll">
+                        <a href=" <c:url value='/j_spring_security_logout' />  ">Logout</a>
+                    </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
