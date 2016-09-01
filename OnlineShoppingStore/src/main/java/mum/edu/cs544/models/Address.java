@@ -12,16 +12,16 @@ import org.springframework.beans.factory.annotation.Value;
 @Embeddable
 public class Address {
 
-   @NotNull
+	@NotEmpty(message = "Street may not be empty")
     private String street;
 
-   @NotNull
+	@NotBlank(message="City may not be empty")
     private String city;
 
-   @NotNull
+	@NotBlank(message="State may not be empty")
     private String state;
 
-   @NotNull
+	@NotBlank(message="Zip may not be empty")
    @Range(min = 1, max = 999999)
    @Value("52557")
     private String zip;

@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -58,8 +59,9 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/customer/add", method = RequestMethod.POST)
-	public String add(@Valid Customer customer, BindingResult result,Model mode) {
-        customer.setAddress(customer.getAddress());
+	public String add(@ModelAttribute("customer")@Valid Customer customer, BindingResult result,Model mode) {
+      
+		customer.setAddress(customer.getAddress());
 		List<ObjectError> errors = result.getAllErrors();
 		for(ObjectError e: errors){
 			System.out.println(e.getDefaultMessage());

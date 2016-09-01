@@ -5,6 +5,8 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import mum.edu.cs544.models.Enum.Genre;
 
 /**
@@ -15,7 +17,9 @@ import mum.edu.cs544.models.Enum.Genre;
 @DiscriminatorValue("Laptop")
 public class Laptop extends Product {
 	
+	@NotBlank(message="SerialNo may not be empty")
 	 private String serialNo;
+	@NotBlank(message="Brand Type may not be empty")
 	 private String type;
 	 
 	 public Laptop(String name, String description, String serialNo, String type) {
